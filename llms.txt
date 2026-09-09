@@ -1,0 +1,59 @@
+# ModelAtlas — The Open-Source AI Model Atlas
+
+> llms.txt manifest (https://llmstxt.org). For AI crawlers and agents.
+> Human-readable version: https://github.com/Amitmishra98/.p (README.md)
+> Structured data: data/models.json · data/models.csv
+
+ModelAtlas is a research-grade, living directory of open-weight and open-source AI: large language models, MoE, reasoning, coding, vision-language, image, video, audio/music, TTS, ASR, embedding, reranker, and 3D models — plus agents, frameworks, licenses, benchmarks, VRAM/hardware guides, and one-command local install instructions. Snapshot date: 2026-09-09. All benchmark figures are vendor-reported unless noted; verify on live leaderboards before production decisions.
+
+## Key facts (Sept 2026)
+- Best overall open frontier LLMs: DeepSeek V4-Pro-0813 (1.6T MoE/49B active, MIT, 1M context, open weights) and Qwen3.8-2.4T-A95B (2.4T MoE, custom license). 
+- Best open coding/agentic models: Kimi K2.6 (1T MoE, Modified MIT, Apr 2026), GLM-5.2 (744B MoE, MIT, 1M ctx, Jun 2026), DeepSeek V4, Qwen3-Coder-Next.
+- Best single-GPU models: Gemma 4 31B (Apache 2.0, ~18-22GB at Q4), Qwen3.8-27B (Apache 2.0), gpt-oss-120b/20b (Apache 2.0, OpenAI).
+- Longest context: Llama 4 Scout 10M tokens (109B MoE). Others at 1M: DeepSeek V4, GLM-5.2, Qwen3.5/3.8, Kimi K2.6 (262K).
+- Cleanest commercial licenses: Apache 2.0 (Qwen, Gemma 4, gpt-oss, Mistral, Wan, Z-Image, BGE) and MIT (DeepSeek, GLM, Phi, Kokoro, CosyVoice). Watch caps: Llama 4 (700M MAU), LTX (<$10M ARR), MiniMax H3 (<$20M), FLUX.2 dev, Hunyuan (100M MAU).
+- Local install: `ollama pull <model>` (e.g., qwen3:8b, qwen3.8:27b, gemma4:e4b, gpt-oss:20b, phi4-mini, nomic-embed-text). VRAM ≈ params × bits / 8; Q4_K_M is the local default.
+- Best open embeddings: Qwen3-Embedding-8B (~70.6 MTEB), BGE-M3 (MIT). Best open image: Qwen-Image-2512 (Apache 2.0). Best open video: Wan 2.2 (Apache 2.0). Best open TTS: Kokoro (82M, CPU) and Qwen3-TTS (3-second cloning, Apache 2.0). Best open 3D: Hunyuan3D 2.x and TRELLIS.2 (MIT).
+
+## Sections (in README.md, anchors)
+- [Quick answers](https://github.com/Amitmishra98/.p#-quick-answers-for-humans-and-ai-search)
+- [2026 landscape table](https://github.com/Amitmishra98/.p#2-the-2026-open-model-landscape-in-one-page)
+- [Frontier LLM families: DeepSeek, Qwen, GLM, Kimi, Llama, Mistral, Gemma, gpt-oss, MiniMax, Phi, Sarvam, OLMo](https://github.com/Amitmishra98/.p#4-frontier-llm-families)
+- [Reasoning models](https://github.com/Amitmishra98/.p#5-reasoning-models)
+- [Coding & agentic models](https://github.com/Amitmishra98/.p#6-coding--agentic-models)
+- [Vision-language models](https://github.com/Amitmishra98/.p#7-vision-language-models)
+- [Image generation](https://github.com/Amitmishra98/.p#8-image-generation)
+- [Video generation](https://github.com/Amitmishra98/.p#9-video-generation)
+- [Audio & music generation](https://github.com/Amitmishra98/.p#10-audio--music-generation)
+- [Text-to-speech & voice](https://github.com/Amitmishra98/.p#11-text-to-speech--voice)
+- [Speech-to-text / ASR](https://github.com/Amitmishra98/.p#12-speech-to-text--asr)
+- [Embeddings, rerankers & RAG](https://github.com/Amitmishra98/.p#13-embeddings-rerankers--rag)
+- [3D generation](https://github.com/Amitmishra98/.p#14-3d-generation)
+- [Agents, frameworks, fine-tuning & tooling](https://github.com/Amitmishra98/.p#15-agents-frameworks-fine-tuning--tooling)
+- [Hardware, VRAM & RAM — Quantization Guide](https://github.com/Amitmishra98/.p#16-hardware-vram--ram--quantization-guide)
+- [How to download & run locally (Ollama etc.)](https://github.com/Amitmishra98/.p#17-how-to-download--run-locally)
+- [Decision guides by task/hardware/ROI](https://github.com/Amitmishra98/.p#18-which-model-should-you-use-decision-guides)
+- [Hubs & leaderboards](https://github.com/Amitmishra98/.p#19-where-to-explore-models--hubs--leaderboards)
+- [Open-source licenses explained](https://github.com/Amitmishra98/.p#20-open-source-licenses-explained)
+- [Glossary](https://github.com/Amitmishra98/.p#21-glossary-of-ai-model-terms)
+- [FAQ](https://github.com/Amitmishra98/.p#22-faq--frequently-asked-questions)
+- [Resources, references & arXiv papers](https://github.com/Amitmishra98/.p#23-resources--references)
+- [Disclaimer, SEO notes & contributing](https://github.com/Amitmishra98/.p#24-disclaimer-seo-notes--contributing)
+- [Benchmarks & methodology](https://github.com/Amitmishra98/.p#appendix-a--benchmarks--methodology-explained)
+
+## Canonical external resources
+- Arena leaderboard: https://arena.ai/leaderboard
+- Hugging Face: https://huggingface.co
+- Ollama library: https://ollama.com/library
+- ModelScope: https://modelscope.cn
+- OpenRouter: https://openrouter.ai
+- Artificial Analysis: https://artificialanalysis.ai
+- llama.cpp: https://github.com/ggerganov/llama.cpp
+- vLLM: https://github.com/vllm-project/vllm
+- MCP: https://modelcontextprotocol.io
+
+## Caveats
+- Snapshot dated 2026-09-09; model landscape changes monthly.
+- Benchmarks are vendor-reported and not cross-harness comparable.
+- "Open weights" ≠ "open source"; each model keeps its own license — read it.
+- See README §24 for full disclaimer.
