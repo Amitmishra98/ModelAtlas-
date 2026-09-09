@@ -1,18 +1,18 @@
 <div align="center">
 
-# 🗺️ ModelAtlas — The Open-Source AI Model Atlas
+# ModelAtlas - The Open-Source AI Model Atlas
 
-### The most complete, research-grade directory of open-weight & open-source AI — LLMs, MoE, reasoning, coding, multimodal, image, video, audio, TTS/ASR, embeddings, 3D, agents, licenses, hardware, benchmarks & local setup
+### The most complete, research-grade directory of open-weight and open-source AI - LLMs, MoE, reasoning, coding, multimodal, image, video, audio, TTS/ASR, embeddings, 3D, agents, licenses, hardware, benchmarks and local setup
 
 [![License: CC BY 4.0](https://img.shields.io/badge/Document-CC--BY--4.0-lightgrey.svg)](LICENSE)
 ![Last updated](https://img.shields.io/badge/Last%20updated-2026--09--09-2ea44f)
-![Models covered](https://img.shields.io/badge/Models%20covered-120%2B-2ea44f)
+![Models covered](https://img.shields.io/badge/Models%20covered-100%2B-2ea44f)
 ![Version](https://img.shields.io/badge/Version-2026.09-blue)
 [![Hugging Face](https://img.shields.io/badge/Models-Hugging%20Face-yellow)](https://huggingface.co)
 [![Ollama](https://img.shields.io/badge/Run-Ollama-2ea44f)](https://ollama.com/library)
 [![Arena](https://img.shields.io/badge/Elo-Arena%20Leaderboard-blue)](https://arena.ai/leaderboard)
 
-**A living survey of every important open model — updated 2026‑09‑09.** One repo: compare → decide → download → run → ship.
+**A living survey of every important open model — updated 2026-09-09.** One repo: compare → decide → download → run → ship.
 
 **🤖 For AI assistants & crawlers:** machine-readable version in [`llms.txt`](llms.txt) and structured data in [`data/models.json`](data/models.json).
 
@@ -20,35 +20,35 @@
 
 ---
 
-## 📖 Quick answers (for humans *and* AI search)
+## Quick answers (for humans *and* AI search)
 
 > **What is the best open-source AI model right now (Sept 2026)?**
-> — **DeepSeek V4‑Pro** (1.6T MoE / 49B active, MIT, 1M context, open weights since Aug 2026) and **Qwen3.8‑2.4T‑A95B** (Alibaba's 2.4T open-weight flagship) lead the overall frontier. **GLM‑5.2** (744B, MIT, 1M ctx) and **Kimi K2.6** (1T, Modified MIT) lead coding/agents. On a single GPU: **Gemma 4 31B**, **Qwen3.8‑27B**. On a laptop: **Phi‑4‑mini**, **gpt‑oss‑20b**, **Gemma 4 E4B**.
+> — **DeepSeek V4-Pro** (1.6T MoE / 49B active, MIT, 1M context, open weights since Aug 2026) and **Qwen3.8-2.4T-A95B** (Alibaba's 2.4T open-weight flagship) lead the overall frontier. **GLM-5.2** (744B, MIT, 1M ctx) and **Kimi K2.6** (1T, Modified MIT) lead coding/agents. On a single GPU: **Gemma 4 31B**, **Qwen3.8-27B**. On a laptop: **Phi-4-mini**, **gpt-oss-20b**, **Gemma 4 E4B**.
 
 > **Can I run an LLM for free, locally?** Yes — Ollama one-liners for every model here (§17). CPU-only works for 1B–8B models.
 
-> **Which open models are safe for commercial products?** Apache 2.0 (Qwen, Gemma 4, gpt‑oss, Mistral, Wan, Z‑Image, FLUX.2 klein…) and MIT (DeepSeek, GLM, Phi, Kimi*). Always read the license — §20 explains every trap (MAU caps, revenue clauses, NC-only weights).
+> **Which open models are safe for commercial products?** Apache 2.0 (Qwen, Gemma 4, gpt-oss, Mistral, Wan, Z-Image, FLUX.2 klein…) and MIT (DeepSeek, GLM, Phi, Kimi*). Always read the license — §20 explains every trap (MAU caps, revenue clauses, NC-only weights).
 
 ---
 
-## ⚡ Table of contents
+## Table of contents
 
 | § | Section | § | Section |
 |---|---|---|---|
-| [1](#1-about-modelatlas) | About & how to read | [13](#13-embeddings-rerankers--rag) | Embeddings, rerankers & RAG |
+| [1](#1-about-modelatlas) | About & how to read | [13](#13-embeddings-rerankers-and-rag) | Embeddings, rerankers & RAG |
 | [2](#2-the-2026-open-model-landscape-in-one-page) | 2026 landscape at a glance | [14](#14-3d-generation) | 3D generation |
-| [3](#3-quick-picks-by-need) | Quick picks by need | [15](#15-agents-frameworks-fine-tuning--tooling) | Agents, fine-tuning & tooling |
-| [4](#4-frontier-llm-families) | Frontier LLM families (A–Z) | [16](#16-hardware-vram--ram--quantization-guide) | Hardware, VRAM & RAM |
-| [5](#5-reasoning-models) | Reasoning models | [17](#17-how-to-download--run-locally) | Download & run locally |
-| [6](#6-coding--agentic-models) | Coding & agentic models | [18](#18-which-model-should-you-use-decision-guides) | Decision guides |
-| [7](#7-vision-language-models) | Vision-language models | [19](#19-where-to-explore-models--hubs--leaderboards) | Hubs & leaderboards |
+| [3](#3-quick-picks-by-need) | Quick picks by need | [15](#15-agents-frameworks-fine-tuning-and-tooling) | Agents, fine-tuning & tooling |
+| [4](#4-frontier-llm-families) | Frontier LLM families (A–Z) | [16](#16-hardware-vram-and-ram-quantization-guide) | Hardware, VRAM & RAM |
+| [5](#5-reasoning-models) | Reasoning models | [17](#17-how-to-download-and-run-locally) | Download & run locally |
+| [6](#6-coding-and-agentic-models) | Coding & agentic models | [18](#18-which-model-should-you-use-decision-guides) | Decision guides |
+| [7](#7-vision-language-models) | Vision-language models | [19](#19-where-to-explore-models-hubs-and-leaderboards) | Hubs & leaderboards |
 | [8](#8-image-generation) | Image generation | [20](#20-open-source-licenses-explained) | Licenses explained |
 | [9](#9-video-generation) | Video generation | [21](#21-glossary-of-ai-model-terms) | Glossary |
-| [10](#10-audio--music-generation) | Audio & music generation | [22](#22-faq--frequently-asked-questions) | FAQ |
-| [11](#11-text-to-speech--voice) | Text-to-speech & voice | [23](#23-resources--references) | Resources & references |
-| [12](#12-speech-to-text--asr) | Speech-to-text / ASR | [24](#24-disclaimer-seo-notes--contributing) | Disclaimer & SEO notes |
+| [10](#10-audio-and-music-generation) | Audio & music generation | [22](#22-faq-frequently-asked-questions) | FAQ |
+| [11](#11-text-to-speech-and-voice) | Text-to-speech & voice | [23](#23-resources-and-references) | Resources & references |
+| [12](#12-speech-to-text-asr) | Speech-to-text / ASR | [24](#24-disclaimer-seo-notes-and-contributing) | Disclaimer & SEO notes |
 
-**Appendices:** [A. Benchmarks & methodology](#appendix-a--benchmarks--methodology-explained) · [B. Repo engineering for search & AI](#appendix-b--how-this-repo-is-engineered-for-search--ai)
+**Appendices:** [A. Benchmarks & methodology](#appendix-a-benchmarks-and-methodology-explained) · [B. Repo engineering](#appendix-b-how-this-repo-is-engineered-for-search-and-ai) · [C. Realtime voice & omni](#appendix-c-realtime-voice-omni-and-speech-to-speech-models) · [D. Document AI & OCR](#appendix-d-document-ai-ocr-and-pdf-tools) · [E. Free API tiers](#appendix-e-free-and-low-cost-api-tiers-for-testing-open-models) · [F. GPU buying guide](#appendix-f-gpu-and-hardware-buying-guide) · [G. Changelog](#appendix-g-changelog)
 
 ---
 
@@ -70,12 +70,12 @@ ModelAtlas is an open, **single-file reference to the entire open-weight AI ecos
 - **Verified-link-first:** every external link points to the canonical source (Hugging Face, GitHub, Ollama, provider docs, arXiv). Every benchmark figure that is not independently re-evaluated is labelled *vendor-reported*.
 - **Machine-readable twins:** [`llms.txt`](llms.txt) for AI crawlers, [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) for agents and dashboards, plus a [repo map](docs/README.md).
 
-### Versioning & freshness
+### Versioning and freshness
 
 | Field | Value |
 |---|---|
 | Edition | 2026 Edition (version 2026.09) |
-| Last verified | 2026‑09‑09 |
+| Last verified | 2026-09-09 |
 | Next scheduled refresh | automated weekly via [GitHub Actions](.github/workflows/refresh.yml) |
 | Snapshot policy | the field moves monthly; this is a point-in-time snapshot, vendor numbers are vendor numbers |
 
@@ -83,44 +83,51 @@ ModelAtlas is an open, **single-file reference to the entire open-weight AI ecos
 
 ## 2. The 2026 open-model landscape in one page
 
-Rankings below are **vendor-reported + public leaderboard snapshots** (Arena Elo, Artificial Analysis, SWE-bench Verified, MTEB) — see §25 for methodology and §19 for live boards. **Always verify on the live leaderboard before a big bet.**
+Rankings below are **vendor-reported + public leaderboard snapshots** (Arena Elo, Artificial Analysis, SWE-bench Verified, MTEB) — see [Appendix A](#appendix-a-benchmarks-and-methodology-explained) for methodology and §19 for live boards. **Always verify on the live leaderboard before a big bet.**
 
-### 🏆 Top open-weight LLMs (Sept 2026 snapshot)
+### Top open-weight LLMs (Sept 2026 snapshot)
 
 | Model (family) | Org | Params (total / active) | Context | License | Standout |
 |---|---|---|---|---|---|
-| **DeepSeek V4‑Pro 0813** | DeepSeek | 1.6T / 49B MoE | 1M | MIT | Overall frontier king (Aug 2026 GA, open weights) |
-| **Qwen3.8‑2.4T‑A95B** | Alibaba (Qwen) | 2.4T / 95B MoE | 262K–1M | Qwen3.8‑Max license | Largest open release; open twin of Qwen3.8‑Max |
-| **Kimi K2.6** | Moonshot AI | 1T / 32B MoE | 262K | Modified MIT | Long-horizon agents, 300-agent swarm research |
-| **GLM‑5.2** | Z.ai (Zhipu) | 744B MoE | 1M | MIT | Coding + 1M-ctx agentic engineering |
-| **Qwen3.5** | Alibaba (Qwen) | 397B / 17B MoE | 1M | Apache 2.0 | Agentic flagship (Feb 2026) |
+| **DeepSeek V4-Pro 0813** | DeepSeek | 1.6T / 49B MoE | 1M | MIT | Overall frontier king (Aug 2026 GA, open weights) |
+| **Qwen3.8-2.4T-A95B** | Alibaba (Qwen) | 2.4T / 95B MoE | 262K–1M | Qwen3.8-Max license | Largest open release; open twin of Qwen3.8-Max |
+| **Kimi K2.6** | Moonshot AI | 1T / 32B MoE | 262K | Modified MIT | Long-horizon agents, image+video input |
+| **Kimi K2.7 Code** | Moonshot AI | 1T / 32B MoE | 256K | Modified MIT | Coding specialist: +21.8% Kimi Code Bench v2, -30% reasoning tokens (Jun 2026) |
+| **GLM-5.2** | Z.ai (Zhipu) | 744B MoE | 1M | MIT | Coding + 1M-ctx agentic engineering |
+| **Qwen3.5** | Alibaba (Qwen) | 397B / 17B MoE | 1M | Apache 2.0 | Agentic flagship (Feb 2026); image+video native |
+| **Qwen3.6-35B-A3B** | Alibaba (Qwen) | 35B / 3B MoE | 256K | Apache 2.0 | Apr 2026 open release, vision included |
 | **Mistral Large 3** | Mistral | 675B / 41B MoE | 256K | Apache 2.0 | Best open multilingual+multimodal from Europe |
 | **Llama 4 Maverick** | Meta | 402B MoE | 1M | Llama 4 Community | Meta's flagship (Behemoth still training) |
 | **Llama 4 Scout** | Meta | 109B / 17B MoE | 10M | Llama 4 Community | World-record context, single-GPU MoE |
-| **DeepSeek V3.2 / V3.2‑Speciale** | DeepSeek | 685B MoE | 128K | MIT | Proven workhorse, huge ecosystem |
-| **Qwen3‑235B‑A22B** | Alibaba (Qwen) | 235B / 22B MoE | 128K+ | Apache 2.0 | The best-documented MoE to self-host |
+| **DeepSeek V3.2 / V3.2-Speciale** | DeepSeek | 685B MoE | 128K | MIT | Proven workhorse, huge ecosystem |
+| **Qwen3-235B-A22B** | Alibaba (Qwen) | 235B / 22B MoE | 128K+ | Apache 2.0 | The best-documented MoE to self-host |
 | **Gemma 4 31B** | Google | 31B dense | 128K+ | Apache 2.0 | Frontier quality on one GPU (~18 GB Q4) |
-| **MiniMax M2.5** | MiniMax | ~200B MoE | ~200K | Apache 2.0 | Strong SWE-bench, cheap API |
-| **MiMo‑V2‑Flash** | Xiaomi | MoE | 256K | MIT | Surprise efficiency leader |
-| **gpt‑oss‑120b** | OpenAI | 117B / 5.1B MoE | 131K | Apache 2.0 | OpenAI's open reasoning model |
+| **MiniMax M2.5** | MiniMax | ~200B MoE | ~200K | MiniMax license | Feb 2026; SWE-bench ~80 (v.r.) |
+| **Hunyuan Hy3** | Tencent | 295B / 21B MoE | 256K | Apache 2.0 | Open-weight reasoning/agents (Jul 2026) |
+| **MiMo-V2-Flash** | Xiaomi | MoE | 256K | MIT | Surprise efficiency leader |
+| **gpt-oss-120b** | OpenAI | 117B / 5.1B MoE | 131K | Apache 2.0 | OpenAI's open reasoning model |
 | **Sarvam 105B** | Sarvam AI | 105B MoE | 128K | Sarvam license | India's Indic-language frontier |
-| **GLM‑4.7** | Z.ai | 355B / 32B MoE | 128K+ | MIT | Production-proven coding/agent MoE |
+| **Seed-OSS-36B** | ByteDance | 36B dense | 32K | Apache 2.0 | ByteDance's open thinking model (Aug 2025) |
+| **GLM-4.7** | Z.ai | 355B / 32B MoE | 128K+ | MIT | Production-proven coding/agent MoE |
 
-### 🏅 Fastest movers this quarter (Apr–Sep 2026 timeline)
+### Fastest movers this quarter (Apr-Sep 2026 timeline)
 
 | Date | Event |
 |---|---|
-| 2026‑02‑03 | Qwen3‑Coder‑Next (open, agentic SWE) |
-| 2026‑02‑16 | Qwen3.5 (397B, Apache 2.0, 1M ctx, agentic) |
-| 2026‑04‑02 | Gemma 4 family (Apache 2.0; E2B→31B) |
-| 2026‑04‑16 | Qwen3.6 open release (Apache 2.0) |
-| 2026‑04‑20 | Kimi K2.6 open weights (Modified MIT) |
-| 2026‑06‑13 | GLM‑5.2 (744B, MIT, 1M ctx) — open within a week of preview |
-| 2026‑07‑31 | DeepSeek V4‑Flash open weights (MIT) |
-| 2026‑08‑03 | Qwen3.8‑Max announcement; Qwen3.8‑27B (Apache 2.0) |
-| 2026‑08‑12 | Qwen3.8‑2.4T‑A95B open weights |
-| 2026‑08‑13 | DeepSeek V4‑Pro‑0813 GA + open weights (1.6T, MIT, 1M ctx) |
-| 2026‑08‑31 | DeepSeek V4‑Flash‑Vision‑Exp weights (305B multimodal MoE, MIT) |
+| 2026-02-03 | Qwen3-Coder-Next (open, agentic SWE) |
+| 2026-02-16 | Qwen3.5 (397B, Apache 2.0, 1M ctx, agentic) |
+| 2026-04-02 | Gemma 4 family (Apache 2.0; E2B→31B) |
+| 2026-04-16 | Qwen3.6 open release (Apache 2.0) |
+| 2026-04-20 | Kimi K2.6 open weights (Modified MIT) |
+| 2026-06-12 | Kimi K2.7-Code open weights (1T, Modified MIT, coding-specialist) |
+| 2026-06-13 | GLM-5.2 (744B, MIT, 1M ctx) — open within a week of preview |
+| 2026-07-06 | Hunyuan Hy3 open weights (295B MoE, Apache 2.0) |
+| 2026-07-23 | LTX-2.5 open weights (22B video+audio, 4K/20s) |
+| 2026-07-31 | DeepSeek V4-Flash open weights (MIT) |
+| 2026-08-03 | Qwen3.8-Max announcement; Qwen3.8-27B (Apache 2.0) |
+| 2026-08-12 | Qwen3.8-2.4T-A95B open weights |
+| 2026-08-13 | DeepSeek V4-Pro-0813 GA + open weights (1.6T, MIT, 1M ctx) |
+| 2026-08-31 | DeepSeek V4-Flash-Vision-Exp weights (305B multimodal MoE, MIT) |
 
 > ℹ️ **Missing from many lists:** Google's Gemma 4 went **Apache 2.0** (a big license step up from Gemma 3), and OpenAI's **gpt-oss** family remains its only open line (no "gpt-oss-2" as of this snapshot).
 
@@ -130,21 +137,21 @@ Rankings below are **vendor-reported + public leaderboard snapshots** (Arena Elo
 
 | If you need… | Pick | Why |
 |---|---|---|
-| Best overall, self-hosted | **DeepSeek V4‑Pro** · **Qwen3.8‑2.4T** | Frontier reasoning + coding at open cost |
-| Best license-friction-free | **Qwen3.8‑27B** · **Gemma 4 31B** · **gpt‑oss‑120b** | Apache 2.0, no strings |
-| Best coding / agentic | **GLM‑5.2** · **Kimi K2.6** · **DeepSeek V4** · **Qwen3‑Coder** | SWE-bench Verified + tool-use leaders |
-| Deep chain-of-thought | **DeepSeek R1 / R1‑0528** · **Qwen3** · **Magistral Small** | Self-correcting math/reasoning |
-| Massive context (docs/repos) | **Llama 4 Scout (10M)** · **GLM‑5.2 / DeepSeek V4 (1M)** | Longest windows |
+| Best overall, self-hosted | **DeepSeek V4-Pro** · **Qwen3.8-2.4T** | Frontier reasoning + coding at open cost |
+| Best license-friction-free | **Qwen3.8-27B** · **Gemma 4 31B** · **gpt-oss-120b** | Apache 2.0, no strings |
+| Best coding / agentic | **GLM-5.2** · **Kimi K2.6** · **DeepSeek V4** · **Qwen3-Coder** | SWE-bench Verified + tool-use leaders |
+| Deep chain-of-thought | **DeepSeek R1 / R1-0528** · **Qwen3** · **Magistral Small** | Self-correcting math/reasoning |
+| Massive context (docs/repos) | **Llama 4 Scout (10M)** · **GLM-5.2 / DeepSeek V4 (1M)** | Longest windows |
 | Multilingual product | **Mistral Large 3** · **Qwen3** · **Sarvam** | 100+/201 languages |
-| One consumer GPU (24 GB) | **Qwen3.8‑27B** · **Gemma 4 31B** | Q4 fits ~18–22 GB |
-| Laptop / edge / CPU | **Phi‑4‑mini** · **gpt‑oss‑20b** · **Gemma 4 E4B** · **SmolLM3** | 3–21B, low RAM |
-| Local coding agent | **Devstral** · **Qwen3‑Coder** · **Cline/OpenHands stack** | Agentic SWE workflows |
+| One consumer GPU (24 GB) | **Qwen3.8-27B** · **Gemma 4 31B** | Q4 fits ~18–22 GB |
+| Laptop / edge / CPU | **Phi-4-mini** · **gpt-oss-20b** · **Gemma 4 E4B** · **SmolLM3** | 3–21B, low RAM |
+| Local coding agent | **Devstral** · **Qwen3-Coder** · **Cline/OpenHands stack** | Agentic SWE workflows |
 | GDPR / EU residency | **Mistral Large 3** · **Qwen3** | Apache + EU provider options |
 | Fully open (data+code+weights) | **OLMo 2** · **SmolLM3** · **Pythia** | Open-everything research lineage |
-| Best free image gen | **Qwen‑Image‑2512** (Apache 2.0) | Leader of open arena, clean license |
+| Best free image gen | **Qwen-Image-2512** (Apache 2.0) | Leader of open arena, clean license |
 | Best free video gen | **Wan 2.2** (Apache 2.0) | No license caps |
-| Best open TTS | **Kokoro** (CPU!) · **Qwen3‑TTS** (clone, 3 s) | Speed + voice cloning |
-| RAG embeddings | **Qwen3‑Embedding‑8B** · **BGE‑M3** | MTEB leaders, self-host |
+| Best open TTS | **Kokoro** (CPU!) · **Qwen3-TTS** (clone, 3 s) | Speed + voice cloning |
+| RAG embeddings | **Qwen3-Embedding-8B** · **BGE-M3** | MTEB leaders, self-host |
 | 3D assets | **Hunyuan3D 2.x** · **TRELLIS.2** | Best open mesh/PBR pipelines |
 
 ---
@@ -153,67 +160,69 @@ Rankings below are **vendor-reported + public leaderboard snapshots** (Arena Elo
 
 > Every family links to its canonical **Hugging Face org / GitHub**. Numbers marked *(v.r.)* = vendor-reported. Full machine-readable registry: [`data/models.json`](data/models.json).
 
-### 4.1 DeepSeek (China 🇨🇳 · MIT) — [GitHub](https://github.com/deepseek-ai) · [HF](https://huggingface.co/deepseek-ai) · [API](https://platform.deepseek.com)
+### 4.1 DeepSeek (China 🇨🇳 · MIT) - [GitHub](https://github.com/deepseek-ai) · [HF](https://huggingface.co/deepseek-ai) · [API](https://platform.deepseek.com)
 
 The lab that reset open-AI economics in 2025 (R1) and kept going. V4 generation went fully open in summer 2026.
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
-| **V4‑Pro‑0813** | MoE | 1.6T / 49B act. | 1M | MIT | GA Aug 13 2026; open weights on HF; 384K max output; reasoning efforts low/high/max |
-| **V4‑Flash‑0731** | MoE | open-weight tier | 128K+ | MIT | Jul 31 2026; cheap fast tier; API in beta at release |
-| **V4‑Flash‑Vision‑Exp** | Multimodal MoE | 305B | — | MIT | First V4 vision model; weights Aug 31 2026 (FP8) |
-| **V3.2 / V3.2‑Speciale** | MoE | 685B | 128K | MIT | Production workhorse of 2025–26 |
-| **R1‑0528** | MoE (reasoning) | 671B / 37B | 128K | MIT | Open reasoning legend; the model that broke pricing |
-| **R1‑Distill (Qwen/Llama)** | Dense distills | 1.5B–70B | 128K | MIT | Run reasoning on a laptop |
+| **V4-Pro-0813** | MoE | 1.6T / 49B act. | 1M | MIT | GA Aug 13 2026; open weights on HF; 384K max output; reasoning efforts low/high/max |
+| **V4-Flash-0731** | MoE | open-weight tier | 128K+ | MIT | Jul 31 2026; cheap fast tier; API in beta at release |
+| **V4-Flash-Vision-Exp** | Multimodal MoE | 305B | — | MIT | First V4 vision model; weights Aug 31 2026 (FP8) |
+| **V3.2 / V3.2-Speciale** | MoE | 685B | 128K | MIT | Production workhorse of 2025–26 |
+| **R1-0528** | MoE (reasoning) | 671B / 37B | 128K | MIT | Open reasoning legend; the model that broke pricing |
+| **R1-Distill (Qwen/Llama)** | Dense distills | 1.5B–70B | 128K | MIT | Run reasoning on a laptop |
 
 - **API (hosted):** among the cheapest frontier APIs; prices change with time-of-day since Aug 2026 (~$0.66–1.32/M in, $1.98–3.96/M out, provider-dependent, cache ~$0.02–0.35/M). Data routes through China — check TOS for sensitive workloads (§24 caveats).
 - **Vibe:** MIT + open weights + published training tech (MLA, DSA sparse attention, FP8) — the "open by default" lab.
 
-### 4.2 Qwen (Alibaba 🇨🇳 · Apache 2.0) — [GitHub](https://github.com/QwenLM) · [HF](https://huggingface.co/Qwen) · [ModelScope](https://modelscope.cn/organization/qwen) · [Bailian API](https://www.alibabacloud.com/product/bailian)
+### 4.2 Qwen (Alibaba 🇨🇳 · Apache 2.0) - [GitHub](https://github.com/QwenLM) · [HF](https://huggingface.co/Qwen) · [ModelScope](https://modelscope.cn/organization/qwen) · [Bailian API](https://www.alibabacloud.com/product/bailian)
 
 The most prolific open lab on earth — language, coder, vision, image, video, audio, embeddings, TTS/ASR. Qwen3.5/3.6 (Apache 2.0) then the Qwen3.8 generation (Aug 2026): 27B under Apache 2.0, 2.4T under a custom license.
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
-| **Qwen3.8‑2.4T‑A95B** | MoE | 2.4T / 95B act. (512 experts) | 262K–1M | Qwen3.8‑Max license | Open twin of Qwen3.8‑Max; hybrid Gated-DeltaNet attention; 92 layers |
-| **Qwen3.8‑27B** | Dense | 27B | 262K+ | Apache 2.0 | Flagship-per-GPU; `ollama pull qwen3.8:27b` |
-| **Qwen3.8‑Flash / Next** | MoE | — | 1M | custom / Apache | Speed-optimized tiers (API-first) |
-| **Qwen3.6** | MoE | — | 256K | Apache 2.0 | Apr 2026 open release |
-| **Qwen3.5** | MoE | 397B / 17B | 1M | Apache 2.0 | Agentic era: visual computer-use claims; desktop/mobile operation |
+| **Qwen3.8-2.4T-A95B** | MoE | 2.4T / 95B act. (512 experts) | 262K–1M | Qwen3.8-Max license | Open twin of Qwen3.8-Max; hybrid Gated-DeltaNet attention; 92 layers |
+| **Qwen3.8-27B** | Dense | 27B | 262K+ | Apache 2.0 | Flagship-per-GPU; `ollama pull qwen3.8:27b` |
+| **Qwen3.8-Flash / Next** | MoE | — | 1M | custom / Apache | Speed-optimized tiers (API-first) |
+| **Qwen3.6-35B-A3B** | MoE | 35B / 3B act. | 256K | Apache 2.0 | Apr 2026; small flagship, image/video input |
+| **Qwen3.5-397B-A17B** | MoE | 397B / 17B | 1M | Apache 2.0 | Agentic era: visual computer-use; image+video input; HF: `Qwen/Qwen3.5-397B-A17B` |
+| **Qwen3.5-9B / 4B** | Dense | 4B-9B | 256K | Apache 2.0 | Small multimodal agentic models (Mar 2026) |
 | **Qwen3** | Dense+MoE | 0.6B–235B (A22B) | 32K–256K | Apache 2.0 | 201 languages, thinking mode, 128K base — the safest default in this list |
-| **Qwen3‑Coder / Next** | MoE | 30B–480B | 256K | Apache 2.0 | Open coding/agent family; "Next" added IDE-grade tool use |
+| **Qwen3-Coder / Next** | MoE | 30B–480B | 256K | Apache 2.0 | Open coding/agent family; "Next" added IDE-grade tool use |
 | **Qwen2.5 legacy** | Dense | 0.5B–72B | 128K | Apache 2.0 | Still the most-fine-tuned family on HF |
 
 - **Vibe:** Apache 2.0 everywhere possible; flagship scale open weeks after API; huge ecosystem (GGUF everywhere, fine-tunes by the thousand).
 
-### 4.3 Z.ai / Zhipu GLM (China 🇨🇳 · MIT) — [GitHub](https://github.com/zai-org) · [HF](https://huggingface.co/zai-org) · [API](https://z.ai)
+### 4.3 Z.ai / Zhipu GLM (China 🇨🇳 · MIT) - [GitHub](https://github.com/zai-org) · [HF](https://huggingface.co/zai-org) · [API](https://z.ai)
 
 China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025) then GLM-5/5.2 (2026).
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
-| **GLM‑5.2** | MoE | 744B | 1M | MIT | Jun 13 2026; open weights BF16+FP8 same week; 1M-ctx agentic coding; API + Coding Plan |
-| **GLM‑5** | MoE | ~745B | 200K–1M | MIT | Feb 2026; frontier reasoning/agent claims; Ascend-trained (US-independent supply chain) |
-| **GLM‑5‑Flash** | MoE | — | 128K+ | MIT | Cheap/fast tier |
-| **GLM‑4.7** | MoE | 355B / 32B | 128K | MIT | The proven 2025–26 agentic workhorse |
-| **GLM‑4.5/4.6** | MoE | 355B | 128K | MIT | Earlier open gens |
-| **GLM‑4.5V / 4.6V** | VLM | 40B+ | 128K | MIT | Document/UI vision agents |
+| **GLM-5.2** | MoE | 744B | 1M | MIT | Jun 13 2026; open weights BF16+FP8 same week; 1M-ctx agentic coding; API + Coding Plan |
+| **GLM-5** | MoE | ~745B | 200K–1M | MIT | Feb 2026; frontier reasoning/agent claims; Ascend-trained (US-independent supply chain) |
+| **GLM-5-Flash** | MoE | — | 128K+ | MIT | Cheap/fast tier |
+| **GLM-4.7** | MoE | 355B / 32B | 128K | MIT | The proven 2025–26 agentic workhorse |
+| **GLM-4.5/4.6** | MoE | 355B | 128K | MIT | Earlier open gens |
+| **GLM-4.5V / 4.6V** | VLM | 40B+ | 128K | MIT | Document/UI vision agents |
 
 - **Vibe:** MIT (maximally permissive) + day-one open weights + aggressive API pricing (Flash tier ~$0.11/M out-class at points in 2026).
 
-### 4.4 Moonshot Kimi (China 🇨🇳 · Modified MIT) — [GitHub](https://github.com/MoonshotAI) · [HF](https://huggingface.co/moonshotai) · [API](https://platform.moonshot.ai)
+### 4.4 Moonshot Kimi (China 🇨🇳 · Modified MIT) - [GitHub](https://github.com/MoonshotAI) · [HF](https://huggingface.co/moonshotai) · [API](https://platform.moonshot.ai)
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
-| **Kimi K2.6** | MoE | 1T / 32B act. | 262K | Modified MIT | Apr 20 2026; native multimodal+agentic; ties/beats GPT‑5.5-class on SWE-bench Pro (v.r.); 300-agent "swarm" research |
-| **Kimi K2.5 / K2‑0905** | MoE | 1T / 32B | 256K | Modified MIT | 2025's trillion-parameter agent champion |
+| **Kimi K2.7-Code** | MoE | 1T / 32B act. | 256K | Modified MIT | Jun 12 2026; coding-specialist; +21.8% Kimi Code Bench v2, ~30% fewer reasoning tokens (v.r.); ~595GB weights; ships with the Kimi Code terminal agent |
+| **Kimi K2.6** | MoE | 1T / 32B act. | 262K | Modified MIT | Apr 20 2026; native multimodal (text+image+video); ties/beats GPT-5.5-class on SWE-bench Pro (v.r.); 300-agent "swarm" research |
+| **Kimi K2.5 / K2-0905** | MoE | 1T / 32B | 256K | Modified MIT | 2025's trillion-parameter agent champion |
 | **Kimi K2** | MoE | 1T / 32B | 128K | Modified MIT | Jul 2025 original; MuonClip optimizer; 15.5T tokens |
 | **Kimi K1.5 / K1** | — | — | — | — | Earlier reasoning/vision gens |
 
-- **License nuance:** below revenue thresholds K2.x behaves like MIT (self-host + fine-tune OK); big commercial MaaS resale triggers the "Kimi K3 License"-style agreement — read §20.
+- **License nuance:** below revenue thresholds K2.x behaves like MIT (self-host + fine-tune OK). Community-documented: serving by companies with >$20M revenue needs Moonshot authorization; large MaaS resale triggers the "Kimi K3"-style revenue-share agreement — read §20. Kimi K3 (reported ~2.8T MoE, 1M ctx) ships under that new revenue-share license.
 - **Vibe:** agentic-first design (tool use, computer use, swarm orchestration) rather than chat-first.
 
-### 4.5 Meta Llama (USA 🇺🇸 · Llama Community License) — [GitHub](https://github.com/meta-llama/llama-models) · [HF](https://huggingface.co/meta-llama)
+### 4.5 Meta Llama (USA 🇺🇸 · Llama Community License) - [GitHub](https://github.com/meta-llama/llama-models) · [HF](https://huggingface.co/meta-llama)
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
@@ -226,7 +235,7 @@ China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025
 - **License:** free below 700M MAU (Llama 4) — above that, enterprise license. Not OSI-"open source" (EU/scale restrictions). Source code in llama-models repo is MIT-ish but weights carry the community license.
 - **Vibe:** the reason "open weights" became mainstream; huge fine-tune ecosystem; 10M-context Scout is unmatched for whole-repo/document dumps.
 
-### 4.6 Mistral (France 🇪🇺 · Apache 2.0) — [GitHub](https://github.com/mistralai) · [HF](https://huggingface.co/mistralai) · [API](https://mistral.ai)
+### 4.6 Mistral (France 🇪🇺 · Apache 2.0) - [GitHub](https://github.com/mistralai) · [HF](https://huggingface.co/mistralai) · [API](https://mistral.ai)
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
@@ -240,12 +249,12 @@ China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025
 
 - **Vibe:** Apache 2.0 + EU/GDPR-friendly; enterprise distribution via Azure/AWS/IBM watsonx.
 
-### 4.7 Google Gemma (USA 🇺🇸 · Apache 2.0 since Gemma 4) — [GitHub](https://github.com/google-gemma) · [HF](https://huggingface.co/google) · [Kaggle](https://www.kaggle.com/models/google/gemma)
+### 4.7 Google Gemma (USA 🇺🇸 · Apache 2.0 since Gemma 4) - [GitHub](https://github.com/google-gemma) · [HF](https://huggingface.co/google) · [Kaggle](https://www.kaggle.com/models/google/gemma)
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
 | **Gemma 4 31B** | Dense | 31B | 128K+ | Apache 2.0 | Flagship (Apr 2 2026); ~2.5× more token-efficient than peers (AA, v.r.); vision in all variants; free on AI Studio |
-| **Gemma 4 26B‑A4B** | MoE | 26B / 4B act. | 128K+ | Apache 2.0 | MoE efficiency sweet spot |
+| **Gemma 4 26B-A4B** | MoE | 26B / 4B act. | 128K+ | Apache 2.0 | MoE efficiency sweet spot |
 | **Gemma 4 E4B / E2B** | Dense (edge) | 8B / 5.1B | 128K | Apache 2.0 | Phone/laptop-ready; audio input on E2B/E4B (v.r.) |
 | **Gemma 3** | Dense | 1B–27B | 32K–128K | Gemma Terms | Previous gen (non-compete clause for foundation models) |
 | **Gemma 3n** | MoE | 8B (1.4B act.) | 32K | Gemma Terms | 2025 efficiency experiment |
@@ -253,13 +262,13 @@ China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025
 - **License note:** Gemma 4 moved to **Apache 2.0** — a deliberate Google strategy shift; Gemma 3 and earlier keep the older "Gemma Terms of Use" (no competitor foundation models).
 - **Vibe:** frontier-dense efficiency; phones-to-servers sizing; >10M first-week downloads (v.r.).
 
-### 4.8 OpenAI gpt-oss (USA 🇺🇸 · Apache 2.0) — [HF](https://huggingface.co/openai) · [GitHub](https://github.com/openai/openai-open-models) · [site](https://openai.github.io/openai-open-models)
+### 4.8 OpenAI gpt-oss (USA 🇺🇸 · Apache 2.0) - [HF](https://huggingface.co/openai) · [GitHub](https://github.com/openai/openai-open-models) · [site](https://openai.github.io/openai-open-models)
 
 | Model | Type | Params | Context | License | Notes |
 |---|---|---|---|---|---|
-| **gpt‑oss‑120b** | MoE | 117B / 5.1B | 131K | Apache 2.0 | Reasoning + coding; fits one 80 GB GPU (FP8/MXFP4) |
-| **gpt‑oss‑20b** | MoE | 21B / 3.6B | 131K | Apache 2.0 | ~16 GB VRAM; the laptop reasoning pick |
-| **gpt‑oss‑safeguard** | MoE | 20b/120b | 131K | Apache 2.0 | Safety reasoning research preview |
+| **gpt-oss-120b** | MoE | 117B / 5.1B | 131K | Apache 2.0 | Reasoning + coding; fits one 80 GB GPU (FP8/MXFP4) |
+| **gpt-oss-20b** | MoE | 21B / 3.6B | 131K | Apache 2.0 | ~16 GB VRAM; the laptop reasoning pick |
+| **gpt-oss-safeguard** | MoE | 20b/120b | 131K | Apache 2.0 | Safety reasoning research preview |
 
 - **Caveats:** not served via OpenAI API/ChatGPT; text-only reasoning models; Apache 2.0 + usage policy (fine-tune OK, no hostile-use fine-tunes etc.).
 - **Vibe:** proof that even OpenAI ships open weights when the strategy demands it.
@@ -269,14 +278,17 @@ China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025
 | Family | Org | Best known open model | License | Notes |
 |---|---|---|---|---|
 | **MiniMax M2.5** | MiniMax | ~200B MoE, ~200K ctx | Apache 2.0 | Strong SWE-bench Verified (~80 v.r.); M2/01-lineage |
-| **MiMo** | Xiaomi | MiMo‑V2‑Flash | MIT | Surprise open performer, 256K ctx |
-| **Phi** | Microsoft | Phi‑4‑mini 3.8B, Phi‑4‑Reasoning 14B | MIT | The edge/research default; tiny and MIT |
+| **MiMo** | Xiaomi | MiMo-V2-Flash | MIT | Surprise open performer, 256K ctx |
+| **Phi** | Microsoft | Phi-4-mini 3.8B, Phi-4-Reasoning 14B | MIT | The edge/research default; tiny and MIT |
 | **Sarvam** | Sarvam AI | Sarvam 105B / 30B | Sarvam license | Indic-language frontier (22 Indian langs) |
 | **OLMo 2** | AI2 | OLMo 2 7B/13B/32B | Apache 2.0 | Fully open: weights+code+data |
 | **SmolLM3** | HF | 3B | Apache 2.0 | Fully open edge line; 3B trains on a single GPU |
 | **Pythia / Amber** | EleutherAI | 12B | Apache 2.0 | Fully-open research lineages |
 | **IBM Granite** | IBM | Granite 3.x / Granite Speech | Apache 2.0 | Enterprise governance, instruct+code |
 | **Falcon** | TII | Falcon 3 (1B–235B) | Apache 2.0 | UAE; Mamba-hybrid variants |
+| **Hunyuan Hy3** | Tencent | 295B / 21B MoE, 256K | Apache 2.0 | Open-weight reasoning/agents (Jul 6 2026); reasoning_effort knob |
+| **Seed-OSS-36B** | ByteDance | 36B dense | Apache 2.0 | ByteDance rare open release; dense thinking model |
+| **InternLM3 / MiniCPM** | Shanghai AI Lab / OpenBMB | 1B-20B | Apache / open | Edge and community favorites (MiniCPM5-1B, MiniCPM5-2B Sep 2026, MiniCPM-V 4.6 1.3B) |
 | **OpenClaw / community** | — | abliterated/fine-tuned variants | varies | Qwable & thousands of HF derivate models |
 
 > ⚠️ Watch-outs: several "open" families above (Llama, Sarvam, Qwen3.8-2.4T, MiniMax-H video, LTX, FLUX.2 [dev]) carry usage caps or custom terms — every license is decoded in §20.
@@ -291,46 +303,47 @@ China's oldest LLM lab (since 2019) and the team that open-sourced GLM-4.7 (2025
 
 | Model | Org | Params | License | Reasoning style | Best at |
 |---|---|---|---|---|---|
-| **DeepSeek R1‑0528 / R1** | DeepSeek | 671B/37B | MIT | Long CoT (R1‑style RL) | Math, logic, coding; the reference open reasoner |
-| **DeepSeek V4‑Pro (max effort)** | DeepSeek | 1.6T/49B | MIT | Effort dial: low/high/max | Frontier reasoning + 1M ctx |
+| **DeepSeek R1-0528 / R1** | DeepSeek | 671B/37B | MIT | Long CoT (R1-style RL) | Math, logic, coding; the reference open reasoner |
+| **DeepSeek V4-Pro (max effort)** | DeepSeek | 1.6T/49B | MIT | Effort dial: low/high/max | Frontier reasoning + 1M ctx |
 | **Qwen3 (thinking mode)** | Qwen | 4B–235B | Apache 2.0 | Hybrid: think/no-think per query | Cheap controllable reasoning (QwQ lineage) |
 | **Qwen3.8 / Qwen3.5** | Qwen | up to 2.4T | Apache/custom | Reasons every request (3.8) | Agentic + reasoning at scale |
 | **Kimi K2.6** | Moonshot | 1T/32B | Mod. MIT | Agentic CoT + tool loops | Long-horizon tasks, HLE-with-tools (v.r.) |
-| **GLM‑5.2 / GLM‑5** | Z.ai | 744B | MIT | Two reasoning modes | Coding/agent + math |
+| **GLM-5.2 / GLM-5** | Z.ai | 744B | MIT | Two reasoning modes | Coding/agent + math |
 | **Magistral Small** | Mistral | ~30B | Apache 2.0 | Configurable reasoning | Self-hosted reasoning, EU/GDPR |
-| **gpt‑oss‑120b / 20b** | OpenAI | 117B/21B | Apache 2.0 | Reasoning (o-series distilled) | Local reasoning + coding |
+| **gpt-oss-120b / 20b** | OpenAI | 117B/21B | Apache 2.0 | Reasoning (o-series distilled) | Local reasoning + coding |
 | **Gemma 4 31B** | Google | 31B | Apache 2.0 | Efficient dense reasoning | Single-GPU reasoning, token-efficient |
 | **MiniMax M2.5** | MiniMax | ~200B | Apache 2.0 | Hybrid reasoning | Math/SWE |
-| **Phi‑4‑Reasoning** | Microsoft | 14B | MIT | Long-form CoT | Edge reasoning research |
-| **DeepSeek R1‑Distill (1.5B–70B)** | DeepSeek | 1.5B–70B | MIT | Distilled CoT | Laptop/edge reasoning |
+| **Phi-4-Reasoning** | Microsoft | 14B | MIT | Long-form CoT | Edge reasoning research |
+| **DeepSeek R1-Distill (1.5B–70B)** | DeepSeek | 1.5B–70B | MIT | Distilled CoT | Laptop/edge reasoning |
 
 **Practical notes**
 
 - A "reasoning" model is ~2–10× more token-expensive per query; gate it behind hard tasks or a thinking toggle (Qwen3-style) to control cost.
 - Small distills (R1-Distill 7B/14B, Qwen3 4B think) are shockingly good at math for their size — start there on laptops.
-- Benchmarks to compare reasoning models: AIME 2024/2025/2026 (math olympiad), GPQA Diamond (PhD science), HLE (Humanity's Last Exam), ARC‑AGI‑2. See §25.
+- Benchmarks to compare reasoning models: AIME 2024/2025/2026 (math olympiad), GPQA Diamond (PhD science), HLE (Humanity's Last Exam), ARC-AGI-2. See §25.
 
 ---
 
-## 6. Coding & agentic models
+## 6. Coding and agentic models
 
 The most commercially fought-over category in 2026. "Coding models" are fine-tunes for code; "agentic models" are trained for tool-calling loops (edit files, run commands, browse, use apps) — which is what SWE-bench Verified/Pro actually measures.
 
 | Model | Org | Size | License | SWE-bench Ver. (v.r.) | Notes |
 |---|---|---|---|---|---|
-| **Kimi K2.6** | Moonshot | 1T/32B | Mod. MIT | ~58 Pro (ties GPT‑5.5-class, v.r.) | Long-horizon agent champion; swarm research |
-| **DeepSeek V4‑Pro** | DeepSeek | 1.6T/49B | MIT | ~84 (v.r.) | Coding + everything |
-| **GLM‑5.2** | Z.ai | 744B | MIT | high 70s–80 (v.r.) | 1M-ctx agentic engineering; Codex/Claude rival claims |
+| **Kimi K2.7-Code** | Moonshot | 1T/32B | Mod. MIT | +21.8% Kimi Code Bench v2 (v.r.) | Coding specialist; -30% reasoning tokens; Kimi Code agent |
+| **Kimi K2.6** | Moonshot | 1T/32B | Mod. MIT | ~58 Pro (ties GPT-5.5-class, v.r.) | Long-horizon agent champion; swarm research |
+| **DeepSeek V4-Pro** | DeepSeek | 1.6T/49B | MIT | ~84 (v.r.) | Coding + everything |
+| **GLM-5.2** | Z.ai | 744B | MIT | high 70s–80 (v.r.) | 1M-ctx agentic engineering; Codex/Claude rival claims |
 | **Qwen3.5 / Qwen3.8** | Qwen | 397B–2.4T | Apache/custom | mid 60s–70s (v.r.) | Computer-use / agentic OS operation |
-| **GLM‑4.7** | Z.ai | 355B/32B | MIT | ~74 (v.r.) | Production favorite of 2025–26 |
+| **GLM-4.7** | Z.ai | 355B/32B | MIT | ~74 (v.r.) | Production favorite of 2025–26 |
 | **Mistral Large 3** | Mistral | 675B/41B | Apache 2.0 | ~92 HumanEval (v.r.) | Enterprise-safe coding |
-| **Qwen3‑Coder‑Next** | Qwen | up to 480B | Apache 2.0 | high (v.r.) | IDE-grade tool use |
-| **Qwen3‑Coder (30B)** | Qwen | 30B | Apache 2.0 | strong | The best open 30B coder to self-host |
+| **Qwen3-Coder-Next** | Qwen | up to 480B | Apache 2.0 | high (v.r.) | IDE-grade tool use |
+| **Qwen3-Coder (30B)** | Qwen | 30B | Apache 2.0 | strong | The best open 30B coder to self-host |
 | **Devstral Small 2** | Mistral | 24B | Apache 2.0 | strong at size | Default local SWE-agent brain |
 | **MiniMax M2.5** | MiniMax | ~200B | Apache 2.0 | ~80 (v.r.) | Best quality-per-dollar coding API |
-| **gpt‑oss‑120b** | OpenAI | 117B/5.1B | Apache 2.0 | o-series level (v.r.) | OpenAI-open coding |
+| **gpt-oss-120b** | OpenAI | 117B/5.1B | Apache 2.0 | o-series level (v.r.) | OpenAI-open coding |
 | **Llama 4 Maverick** | Meta | 402B | Llama Comm. | ~56–62 (v.r.) | Multimodal + tool use |
-| **Phi‑4‑mini** | Microsoft | 3.8B | MIT | modest | Tiny agent brains for edge |
+| **Phi-4-mini** | Microsoft | 3.8B | MIT | modest | Tiny agent brains for edge |
 
 **Open coding-agent stacks that consume these models** (see also §15)
 
@@ -358,14 +371,14 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 | Model | Org | Size | Modalities | License | Notes |
 |---|---|---|---|---|---|
-| **DeepSeek V4‑Flash‑Vision‑Exp** | DeepSeek | 305B MoE | image+text | MIT | Aug 31 2026; first V4 vision weights (FP8) |
+| **DeepSeek V4-Flash-Vision-Exp** | DeepSeek | 305B MoE | image+text | MIT | Aug 31 2026; first V4 vision weights (FP8) |
 | **Gemma 4 (all)** | Google | E2B–31B | image (+audio on edge variants) | Apache 2.0 | Vision across the whole family |
-| **Qwen3.5 / Qwen3.6 Omni?** | Qwen | up to 2.4T | image+video+audio (Max) | Apache/custom | Open Qwen3-VL line; computer-use agents |
-| **Qwen2.5‑VL / Qwen3‑VL** | Qwen | 3B–72B | image+video | Apache 2.0 | Document/UI champion; tons of GGUF |
+| **Qwen3.5-397B-A17B / Qwen3.6-35B-A3B / Qwen3.8-27B** | Qwen | 27B-397B | image+video+text | Apache 2.0 | Open Qwen3.5+ weights are natively multimodal; computer-use agents; Qwen3.8-2.4T is text-only |
+| **Qwen2.5-VL / Qwen3-VL** | Qwen | 3B–72B | image+video | Apache 2.0 | Document/UI champion; tons of GGUF |
 | **Llama 4 (Maverick/Scout)** | Meta | 109B–402B | image in, text out | Llama Comm. | Native vision MoE |
 | **Mistral Large 3** | Mistral | 675B/41B | image+text | Apache 2.0 | 2.5B vision encoder |
-| **GLM‑4.6V / GLM‑5 (multimodal)** | Z.ai | 40B–355B | image | MIT | Strong document & GUI agents |
-| **Kimi K2.6** | Moonshot | 1T/32B | image+text | Mod. MIT | Native multimodal agentic |
+| **GLM-4.6V / GLM-5 (multimodal)** | Z.ai | 40B–355B | image | MIT | Strong document & GUI agents |
+| **Kimi K2.6 / K2.7 Code** | Moonshot | 1T/32B | image+video+text | Mod. MIT | Native multimodal agentic (video placeholder in chat template) |
 | **MiniMax M2 (VLM)** | MiniMax | ~200B | image | Apache 2.0 | — |
 | **Pixtral (legacy)** | Mistral | 12B | image | Apache 2.0 | Still fine for OCR pipelines |
 
@@ -377,16 +390,16 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 | Model | Org | Params | VRAM (min) | License | Best for |
 |---|---|---|---|---|---|
-| **Qwen‑Image‑2512** | Qwen | 20B+ | ~24 GB | Apache 2.0 | **Open #1 overall** (10k+ blind arena rounds, v.r.); multilingual text (incl. Arabic RTL) |
+| **Qwen-Image-2512** | Qwen | 20B+ | ~24 GB | Apache 2.0 | **Open #1 overall** (10k+ blind arena rounds, v.r.); multilingual text (incl. Arabic RTL) |
 | **FLUX.2 [dev]** | BFL | 32B | ~24 GB | FLUX.2 [dev] Non-Commercial | Photorealism + prompt fidelity (license paid above $100k revenue) |
 | **FLUX.2 [klein]** | BFL | 4B/9B | ~13 GB | FLUX.2 [dev]-style | Real-time/edge, commercial below thresholds |
-| **Z‑Image‑Turbo** | Tongyi/Z.ai | 6B | ~16 GB | Apache 2.0 | Throughput-per-dollar; bilingual text; turbo speed |
-| **GLM‑Image** | Z.ai | 9B+7B | ~20 GB | MIT | Best typography/poster/infographic text |
-| **HiDream‑O1** | HiDream | 8B | ~13 GB | MIT | Param-efficient quality |
+| **Z-Image-Turbo** | Tongyi/Z.ai | 6B | ~16 GB | Apache 2.0 | Throughput-per-dollar; bilingual text; turbo speed |
+| **GLM-Image** | Z.ai | 9B+7B | ~20 GB | MIT | Best typography/poster/infographic text |
+| **HiDream-O1** | HiDream | 8B | ~13 GB | MIT | Param-efficient quality |
 | **HunyuanImage 3.0** | Tencent | 80B/13B act. | 40 GB+ | Community | Long complex prompts, knowledge-heavy scenes |
 | **SD 3.5 Large / SDXL** | Stability | 8B / 3.5B | 8–16 GB | Stability Comm. | The LoRA/fine-tune ecosystem kings |
 | **Stable Diffusion 1.5** | Stability | 0.9B | 4 GB | CreativeML OpenRAIL | Legacy community (still huge for LoRAs) |
-| **Qwen‑Image‑Lightning** | Qwen | — | — | Apache 2.0 | Fast steps |
+| **Qwen-Image-Lightning** | Qwen | — | — | Apache 2.0 | Fast steps |
 
 **Rules of thumb (2026)**
 
@@ -404,14 +417,14 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 | Model | Org | Size | Max out | Audio | License | Best for |
 |---|---|---|---|---|---|---|
 | **Wan 2.2** | Qwen/Tongyi | 1.3B–14B | 1080p · ~10 s (4K preview) | ✅ (2.5) | Apache 2.0 | **Cleanest commercial license**; local 14B |
-| **LTX‑2.5** | Lightricks | 22B | 4K · 20 s | ✅ native | Free < $10M ARR | Local 4K + synced audio; speed king |
+| **LTX-2.5** | Lightricks | 22B | 4K · 20 s | ✅ native | Free < $10M ARR | Local 4K + synced audio; speed king |
 | **MiniMax H3 (Hailuo 3.0)** | MiniMax | 33.1B | 768p open · 2K API | ✅ stereo | Community < $20M rev | Reference-heavy scenes (faces, sets, cues) |
 | **HunyuanVideo 1.5** | Tencent | 13B | 720p · 15 s | ✅ | Community (100M MAU cap) | Cinematic motion, modest hardware |
 | **SkyReels V2** | SkyWork | — | 8+ s (long-form) | — | Apache 2.0 (check) | Long-form consistency |
 | **CogVideoX / X1.5** | Zhipu | 5B | 10 s | — | CogVideoX license | Open video pioneer line |
-| **Mochi‑1** | Genmo | 10B | 5 s | — | Apache 2.0 | Open baseline research |
-| **Open‑Sora 2.0** | HPC-AI | — | 15 s | — | MIT (code); check weights | Fully open pipeline ambitions |
-| **LTX‑2.3** | Lightricks | — | — | ✅ | LTX Community | Prior gen, still solid |
+| **Mochi-1** | Genmo | 10B | 5 s | — | Apache 2.0 | Open baseline research |
+| **Open-Sora 2.0** | HPC-AI | — | 15 s | — | MIT (code); check weights | Fully open pipeline ambitions |
+| **LTX-2.3** | Lightricks | — | — | ✅ | LTX Community | Prior gen, still solid |
 
 **Quick picks**
 
@@ -423,11 +436,11 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 ---
 
-## 10. Audio & music generation
+## 10. Audio and music generation
 
 | Model | Org | Size | License | Notes |
 |---|---|---|---|---|
-| **ACE‑Step 1.5** | ACE/FunAudio | open | open weights (check) | Text→full songs, 50+ langs, covers, vocal-to-BGM, 10-min pieces; consumer GPUs/Mac |
+| **ACE-Step 1.5** | ACE/FunAudio | open | open weights (check) | Text→full songs, 50+ langs, covers, vocal-to-BGM, 10-min pieces; consumer GPUs/Mac |
 | **MusicGen** | Meta | 1.5B | code MIT · weights CC-BY-NC | The classic open music baseline |
 | **Stable Audio Open** | Stability | — | Stability Community | SFX/music stems from text |
 | **YuE** | — | 7B | Apache 2.0 (check) | Song generation w/ vocals |
@@ -438,16 +451,16 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 ---
 
-## 11. Text-to-speech & voice
+## 11. Text-to-speech and voice
 
 | Model | Org | Params | VRAM | Cloning | Langs | License | Notes |
 |---|---|---|---|---|---|---|---|
 | **Kokoro** | Hexgrad | 82M | CPU/2 GB | No (54 presets) | EN (+ few) | Apache 2.0 | ~200× real-time on a 4090; the CPU default |
-| **Qwen3‑TTS** | Qwen | 0.6B/1.7B | 4–8 GB | ✅ 3 s | 10 | Apache 2.0 | 5M+ hrs training (v.r.); NL emotion control; streaming 97 ms |
+| **Qwen3-TTS** | Qwen | 0.6B/1.7B | 4–8 GB | ✅ 3 s | 10 | Apache 2.0 | 5M+ hrs training (v.r.); NL emotion control; streaming 97 ms |
 | **Chatterbox (Turraa)** | Resemble AI | 0.35–1.2B | 6 GB | ✅ 5–10 s | 23 (multiling.) | MIT | Emotional, zero-shot cloning |
 | **CosyVoice 3.0** | FunAudioLLM | 0.5B | ~4 GB | ✅ zero-shot | multi | Apache 2.0 | 150 ms streaming |
-| **IndexTTS‑2** | IndexTeam | — | — | ✅ zero-shot | multi | open (check) | Emotion + duration control |
-| **F5‑TTS** | — | ~0.3B | ~4 GB | ✅ | EN/zh | MIT | Fast (33× Fast variant) |
+| **IndexTTS-2** | IndexTeam | — | — | ✅ zero-shot | multi | open (check) | Emotion + duration control |
+| **F5-TTS** | — | ~0.3B | ~4 GB | ✅ | EN/zh | MIT | Fast (33× Fast variant) |
 | **Piper** | Rhasspy | tiny | CPU/RPi | No | 20+ | MIT | Edge TTS for IoT |
 | **Fish Speech / OpenAudio S2** | fishaudio | 1.5B–4B | 12–24 GB | ✅ 10–30 s | 80+ | Research license | Commercial via paid API |
 | **Voxtral TTS** | Mistral | — | — | ✅ 3 s | multi | Open-weight (check) | EU option |
@@ -462,10 +475,10 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 | Model | Org | Params | Langs | License | Notes |
 |---|---|---|---|---|---|
-| **Whisper large‑v3 / turbo** | OpenAI | 1.55B / 0.8B | 99 | MIT | The reference; fastest ecosystem (faster-whisper, whisper.cpp, WhisperX) |
-| **Qwen3‑ASR** | Qwen | 0.6B/1.7B | 52 | Apache 2.0 | Strong Mandarin/Asian + multilingual |
+| **Whisper large-v3 / turbo** | OpenAI | 1.55B / 0.8B | 99 | MIT | The reference; fastest ecosystem (faster-whisper, whisper.cpp, WhisperX) |
+| **Qwen3-ASR** | Qwen | 0.6B/1.7B | 52 | Apache 2.0 | Strong Mandarin/Asian + multilingual |
 | **NVIDIA Parakeet TDT** | NVIDIA | ~0.6B | EN | Apache 2.0 | Fastest batch; ~1.4% WER EN (v.r.) |
-| **NVIDIA Canary‑Qwen 2.5B** | NVIDIA | 2.5B | EN/ES/DE/FR | CC-BY-4.0 | English accuracy leader on Open ASR LB (v.r.) |
+| **NVIDIA Canary-Qwen 2.5B** | NVIDIA | 2.5B | EN/ES/DE/FR | CC-BY-4.0 | English accuracy leader on Open ASR LB (v.r.) |
 | **Moonshine** | Useful Sensors | ~60M | EN | Apache 2.0 | On-device/low-latency edge |
 | **Vosk** | Alpha Cephei | tiny | 20+ | Apache 2.0 | Embedded/offline, low power |
 | **IBM Granite Speech** | IBM | ~1B | multi | Apache 2.0 | Enterprise governance |
@@ -478,29 +491,29 @@ VLMs read images, screenshots, documents, video frames, and (increasingly) audio
 
 ---
 
-## 13. Embeddings, rerankers & RAG
+## 13. Embeddings, rerankers and RAG
 
 RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto an LLM: chunk docs → embed → vector search → rerank → generate. In 2026 open-source embedders beat hosted API models on MTEB (§25).
 
-### Embedding models (ranked by MTEB, open subset — v.r.)
+### Embedding models (ranked by MTEB, open subset - v.r.)
 
 | Model | Org | Dims | MTEB | License | Notes |
 |---|---|---|---|---|---|
-| **Qwen3‑Embedding‑8B** | Qwen | 4096 | ~70.6 | Apache 2.0 | Open leader: multilingual + code retrieval |
-| **NV‑Embed‑v2** | NVIDIA | 4096 | ~72 (EN) | NVIDIA Open Model (check terms) | Max English accuracy |
-| **BGE‑M3** | BAAI | 1024 | ~67 | MIT | Hybrid dense+sparse; production multilingual default |
-| **gte‑Qwen3‑8B** | Alibaba | 4096 | ~68 | Apache 2.0 | Long-context retrieval |
-| **nomic‑embed‑v2 / text** | Nomic | 768 | ~61–62 | Apache 2.0 | Laptop pick via Ollama (`ollama pull nomic-embed-text`) |
-| **Mxbai‑embed‑large** | Mixedbread | 1024 | ~65 | Apache 2.0 | Best sub-500M retrieval |
+| **Qwen3-Embedding-8B** | Qwen | 4096 | ~70.6 | Apache 2.0 | Open leader: multilingual + code retrieval |
+| **NV-Embed-v2** | NVIDIA | 4096 | ~72 (EN) | NVIDIA Open Model (check terms) | Max English accuracy |
+| **BGE-M3** | BAAI | 1024 | ~67 | MIT | Hybrid dense+sparse; production multilingual default |
+| **gte-Qwen3-8B** | Alibaba | 4096 | ~68 | Apache 2.0 | Long-context retrieval |
+| **nomic-embed-v2 / text** | Nomic | 768 | ~61–62 | Apache 2.0 | Laptop pick via Ollama (`ollama pull nomic-embed-text`) |
+| **Mxbai-embed-large** | Mixedbread | 1024 | ~65 | Apache 2.0 | Best sub-500M retrieval |
 | **Jina Embeddings v3** | Jina | 8192 | ~63 | Apache 2.0 | Long docs, task LoRAs |
-| **all‑MiniLM‑L6‑v2** | SBERT | 384 | ~56 | Apache 2.0 | 23M params, edge/CPU |
+| **all-MiniLM-L6-v2** | SBERT | 384 | ~56 | Apache 2.0 | 23M params, edge/CPU |
 
 ### Rerankers (second-stage precision)
 
 | Model | Org | Notes |
 |---|---|---|
-| **BGE‑reranker‑v2‑m3** | BAAI | Default production reranker (MIT) |
-| **Qwen3‑Reranker** | Qwen | Apache 2.0, multilingual |
+| **BGE-reranker-v2-m3** | BAAI | Default production reranker (MIT) |
+| **Qwen3-Reranker** | Qwen | Apache 2.0, multilingual |
 | **Jina Reranker v2** | Jina | API/open hybrid |
 | **Cohere Rerank** | Cohere | API (not open) |
 
@@ -515,7 +528,7 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 | **pgvector** | PostgreSQL license | Add vectors to your existing Postgres |
 | **LanceDB** | Apache 2.0 | Embedded, serverless-ish |
 
-### RAG frameworks & orchestration
+### RAG frameworks and orchestration
 
 | Tool | License | Notes |
 |---|---|---|
@@ -547,7 +560,7 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 
 ---
 
-## 15. Agents, frameworks, fine-tuning & tooling
+## 15. Agents, frameworks, fine-tuning and tooling
 
 2026 is the agent era: LLM → tool calls → actions. Open source owns this stack end-to-end.
 
@@ -590,14 +603,14 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 | **Qwen3.5/GUI agents** | Model-level computer use | Apache 2.0 |
 | **UI-TARS (ByteDance)** | GUI agent model | Apache 2.0 (weights check) |
 
-### Serving & inference infra (production)
+### Serving and inference infra (production)
 
 | Engine | License | Best for |
 |---|---|---|
 | **vLLM** | Apache 2.0 | High-throughput OpenAI-compatible serving; PagedAttention |
 | **SGLang** | Apache 2.0 | RadixAttention; multi-modal; agent workloads |
 | **llama.cpp** | MIT | CPU/edge GGUF inference; bindings everywhere |
-| **TensorRT‑LLM** | NVIDIA license | Max perf on NVIDIA GPUs |
+| **TensorRT-LLM** | NVIDIA license | Max perf on NVIDIA GPUs |
 | **TGI** | Apache 2.0 | HF's Text Generation Inference |
 | **Ollama** | MIT | Local dev UX, one command |
 | **KTransformers** | MIT | Run big MoE on limited hardware (expert offload) |
@@ -605,7 +618,7 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 
 ---
 
-### 15.1 Fine-tuning & quantization (customizing models)
+### 15.1 Fine-tuning and quantization (customizing models)
 
 ### Fine-tuning ladder (cheapest → most powerful)
 
@@ -615,7 +628,7 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 | **LoRA / QLoRA** | small adapters (0.1–1% params) | 1 GPU | Style, format, domain, tool behavior |
 | **DoRA / LoRA-XS** | refined adapters | 1 GPU | Better rank/quality trade-offs |
 | **Full fine-tune** | all weights | 4–64 GPUs | Major domain shift / new language |
-| **RLHF / DPO / GRPO / R1‑V RL** | reward-optimized | big | Reasoning & safety alignment; how R1-style models are made |
+| **RLHF / DPO / GRPO / R1-V RL** | reward-optimized | big | Reasoning & safety alignment; how R1-style models are made |
 | **Distillation** | student from teacher | 1–8 GPUs | Shrink a model, keep behavior |
 
 ### Tools
@@ -650,7 +663,7 @@ RAG (Retrieval-Augmented Generation) is how you bolt your private knowledge onto
 
 ---
 
-## 16. Hardware, VRAM & RAM — Quantization Guide
+## 16. Hardware, VRAM and RAM - Quantization Guide
 
 ### The only formula you need
 
@@ -683,7 +696,7 @@ KV cache ≈ `2 × layers × kv_heads × head_dim × ctx_tokens × bytes`. Pract
 | **80 GB** (H100/A100/MI300X) | 117B MoE FP8 | gpt-oss-120b, GLM-4.7 Q4, Llama 4 Scout-Q4 (55 GB) |
 | **Multi-GPU node** | 400B–2.4T | DeepSeek V4, Qwen3.8-2.4T, GLM-5.2, Kimi K2.6 |
 
-### RAM (no GPU) — llama.cpp / Ollama rules of thumb
+### RAM (no GPU) - llama.cpp / Ollama rules of thumb
 
 Model must fit in **RAM + swap**; expect **1–4 tok/s** at 8B on a modern laptop CPU (more with Metal/AVX-512 + big context). 8B Q4 ≈ 5 GB RAM + ~2 GB overhead → 16 GB RAM laptops are fine. 14B Q4 ≈ 9 GB → 32 GB RAM recommended. MoE models are the CPU sleeper: only active experts run, so 235B-A22B Q4 (~132 GB file) is not CPU-feasible, but **gpt-oss-20b / Qwen3-30B-A3B** (3B active) run surprisingly well on 32 GB RAM machines.
 
@@ -711,9 +724,9 @@ Ollama (easiest) · llama.cpp (CPU/edge) · LM Studio (GUI) · vLLM (GPU serving
 
 ---
 
-## 17. How to Download & Run Locally
+## 17. How to Download and Run Locally
 
-### 🦙 The easiest way — Ollama (recommended for most people)
+### The easiest way - Ollama (recommended for most people)
 
 ```bash
 # 1. Install (Linux/macOS)
@@ -761,7 +774,7 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
-### 🤗 Hugging Face (transformers / fine-tuning)
+### Hugging Face (transformers / fine-tuning)
 
 ```bash
 pip install transformers huggingface-hub
@@ -769,14 +782,14 @@ pip install transformers huggingface-hub
 # Download only
 huggingface-cli download meta-llama/Llama-4-Scout-17B-16E-Instruct
 
-# Load & run in Python
+# Load and run in Python
 from transformers import AutoTokenizer, AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen3-8B", device_map="auto")
 tok = AutoTokenizer.from_pretrained("Qwen/Qwen3-8B")
 out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 ```
 
-### ⚙️ Other inference engines
+### Other inference engines
 
 | Engine | Best for | Example |
 |---|---|---|
@@ -793,7 +806,7 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 
 ## 18. Which Model Should You Use? (Decision Guides)
 
-### 🎯 By task
+### By task
 
 | If you need… | Start with | Why |
 |---|---|---|
@@ -809,7 +822,7 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 | **GDPR / EU residency** | Mistral Large 3 · Qwen3 | Apache + EU provider |
 | **Fully open training data** | OLMo 2 · SmolLM3 | Weights + code + data open |
 
-### 🎯 By hardware
+### By hardware
 
 | Hardware | Pick | Command |
 |---|---|---|
@@ -821,7 +834,7 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 | **48GB+** | Llama 3.3 70B | `ollama pull llama3.3:70b` |
 | **Multi-GPU** | DeepSeek V4, GLM-5.2, Qwen3.5 | `ollama pull deepseek-v4-flash` |
 
-### 🎯 By return-on-investment (best quality per dollar)
+### By return-on-investment (best quality per dollar)
 
 - **Best budget:** DeepSeek V4-Flash ($0.28/1M out) · Qwen3-Coder-Next ($0.11/1M in).
 - **Best free (self-host):** Qwen3 / Gemma 4 after hardware cost.
@@ -831,7 +844,7 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 
 ---
 
-## 19. Where to Explore Models — Hubs & Leaderboards
+## 19. Where to Explore Models - Hubs and Leaderboards
 
 | Platform | What it is | Link |
 |---|---|---|
@@ -871,13 +884,13 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 | **Modified MIT** | ✅ Mostly | ✅ | Kimi K2.x (self-host + fine-tune ok; revenue-triggered terms for resale above thresholds). |
 | **Llama Community License** | ✅ but MAU cap | ✅ | 700M MAU cap for Llama 4 → enterprise license above; not OSI "open source". |
 | **Gemma Terms of Use** | ✅ | ⚠️ no competitor foundation models | Gemma 3 and earlier. (Gemma 4 → Apache 2.0.) |
-| **Kimi K3 License** | ✅ with revenue terms | ✅ | Revenue-triggered MaaS resale agreement. |
-| **Qwen3.8-Max license** | ✅ mostly | ✅ | Custom terms for 2.4T-A95B; 27B sibling stays Apache 2.0. |
+| **Kimi K3 License** | ✅ with revenue terms | ✅ | Revenue-triggered MaaS resale; also applies in spirit to K2.x serving by >$20M-revenue companies. |
+| **Qwen3.8-Max license (2.4T)** | ⚠️ conditions | ✅ | Non-commercial/revenue-share terms reported for the 2.4T open release (HF license:other); 27B sibling stays Apache 2.0. |
 | **CC-BY-NC** | ❌ Non-commercial | ✅ | Command R+, NV-Embed v1, F5-TTS weights, MusicGen weights, Meta MMS. |
 | **BigCode OpenRAIL-M** | ✅ but use-based | ✅ | StarCoder 2 (harmful-use restrictions). |
 | **Stability Community / Databricks / NVIDIA** | ⚠️ conditions | ✅ | DBRX, StableLM, Nemotron, SD3.5, Stable Audio Open. |
 | **Tencent Hunyuan Community** | ✅ below 100M MAU | ✅ | HunyuanVideo, HunyuanImage, Hy3. |
-| **LTX / MiniMax Community** | ✅ below revenue threshold | ✅ | LTX-2.x (<$10M ARR), MiniMax H3 (<$20M). |
+| **LTX / MiniMax Community** | ✅ below revenue threshold | ✅ | LTX-2.5 (<$10M ARR), MiniMax H3 (<$20M), MiniMax M2.5 (custom LICENSE-MODEL). |
 | **FLUX.2 [dev] Non-Commercial** | ✅ <$100k revenue | ✅ | BFL's dev license for FLUX.2 [dev] (pro/enterprise above). |
 | **Sarvam license** | ✅ mostly | ✅ | Indic models; read caps for large-scale resale. |
 
@@ -922,7 +935,7 @@ out = model.generate(**tok(["Hello"], return_tensors="pt").to(model.device))
 
 ---
 
-## 22. FAQ — Frequently Asked Questions
+## 22. FAQ - Frequently Asked Questions
 
 ### What is the best open-source AI model in 2026?
 It depends on your task. **DeepSeek V4-Pro** and **Qwen3.8-2.4T** lead overall. **Kimi K2.6** and **GLM-5.2** are best for coding/agentic work. **Gemma 4** and **Qwen3.8-27B** are best on a single GPU. **Phi-4-mini** and **gpt-oss-20b** are best for laptops. [See the decision guides →](#18-which-model-should-you-use-decision-guides)
@@ -940,7 +953,7 @@ Yes. **Ollama** runs 1B–8B models on CPU/RAM. **Phi-4-mini** (3.8B) and **Smol
 In **MoE** models (DeepSeek V4 = 1.6T total / 49B active), only a fraction of the network runs per token. Active params determine **speed** and **memory**, while total params reflect overall capacity. That's why a "1T" model can still be fast.
 
 ### Where do I download open-source AI models?
-**Hugging Face** (weights), **GitHub** (source code), **Ollama** (`ollama pull <model>`), **ModelScope** (Chinese hub), and model-specific sites. See [§19](#19-where-to-explore-models--hubs--leaderboards).
+**Hugging Face** (weights), **GitHub** (source code), **Ollama** (`ollama pull <model>`), **ModelScope** (Chinese hub), and model-specific sites. See [§19](#19-where-to-explore-models-hubs-and-leaderboards).
 
 ### What is the best open-source model for coding?
 **Kimi K2.6**, **GLM-5.2**, and **DeepSeek V4** top SWE-bench/Terminal-Bench. For local coding agents, try **Devstral** (24B) or **Qwen3-Coder**.
@@ -955,7 +968,7 @@ In **MoE** models (DeepSeek V4 = 1.6T total / 49B active), only a fraction of th
 **Kokoro** (82M, Apache 2.0) for speed and zero GPU. **Chatterbox** or **Qwen3-TTS** for commercial-safe voice cloning. **Piper** for edge devices.
 
 ### How much VRAM do I need?
-Model file ≈ `params × bits / 8`. A **4-bit (Q4)** 8B model needs ~5GB VRAM; a 70B needs ~42GB; a 235B MoE needs ~132GB. See [§16](#16-hardware-vram--ram--quantization-guide).
+Model file ≈ `params × bits / 8`. A **4-bit (Q4)** 8B model needs ~5GB VRAM; a 70B needs ~42GB; a 235B MoE needs ~132GB. See [§16](#16-hardware-vram-and-ram-quantization-guide).
 
 ### Is open source as good as GPT-4/Claude?
 For many real-world tasks, open models reach **~95%** of frontier proprietary models on benchmarks like SWE-bench, MTEB, and Arena — at **zero per-token cost**. The absolute quality ceiling (hardest reasoning) still favors closed frontier models, but the gap is small and closing (2026: open models beat GPT-4.5/Claude-3.5-era closed models outright on most benches).
@@ -966,6 +979,15 @@ For many real-world tasks, open models reach **~95%** of frontier proprietary mo
 ### Which model has the longest context?
 **Llama 4 Scout** at 10M tokens (109B MoE, single-GPU). Next tier: **Qwen3.8/GLM-5.2/DeepSeek V4** at ~1M. Qwen3.8-2.4T claims up to 1M via providers.
 
+### Can I test open models for free without my own GPU?
+Yes — free tiers that routinely cover open models: **Groq** (fast Llama/Qwen/gpt-oss endpoints, ~14.4K req/day), **Cerebras** (fast Llama, similar caps), **OpenRouter `:free`** models (20 RPM / 50 RPD without credits), **Google Gemini API free tier** (proprietary but generous), **DeepSeek signup grant**, **Mistral Codestral free key** (30 RPM), **Hugging Face serverless** for <10B models, and **GitHub Models**. Full table in [Appendix E](#appendix-e-free-and-low-cost-api-tiers-for-testing-open-models).
+
+### Which open models are natively multimodal in 2026?
+**Qwen3.5/3.6/3.8** open weights handle image+video (Qwen3.8-2.4T is text-only), **Gemma 4** (all sizes), **Kimi K2.6/K2.7 Code** (image+video), **Llama 4**, **Mistral Large 3**, **MiniMax M2**, and **DeepSeek V4-Flash-Vision-Exp**. GLM-5.2 is text-first with the GLM-4.6V vision sibling.
+
+### What changed in open-source AI this summer (2026)?
+GLM-5.2 (Jun 13), Kimi K2.7-Code (Jun 12), Hunyuan Hy3 under Apache 2.0 (Jul 6), LTX-2.5 video+audio (Jul 23), DeepSeek V4-Flash weights (Jul 31) and V4-Pro GA+weights (Aug 13), Qwen3.8 generation (Aug), Gemma 4 staying hot (10M+ first-week downloads). Full log: [CHANGELOG.md](CHANGELOG.md).
+
 ### What about DeepSeek data-routing concerns?
 Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs route through China — check provider TOS before sending sensitive data. See §24.
 
@@ -973,9 +995,9 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 
 ---
 
-## 23. Resources & References
+## 23. Resources and References
 
-### Official docs & hubs
+### Official docs and hubs
 - 🌍 **Arena leaderboard (live):** https://arena.ai/leaderboard
 - 🤗 **Hugging Face:** https://huggingface.co · **Open LLM Leaderboard:** https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard
 - 🦙 **Ollama library:** https://ollama.com/library
@@ -992,7 +1014,7 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 - **Ollama VRAM requirements:** https://localllm.in/blog/ollama-vram-requirements-for-local-llms
 - **What is LLM quantization:** https://huggingface.co/blog/merve/quantization
 
-### Primary sources — peer-reviewed technical reports (arXiv, open access)
+### Primary sources - peer-reviewed technical reports (arXiv, open access)
 
 | Model / work | Paper / report | Reference |
 |---|---|---|
@@ -1005,6 +1027,13 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 | **Qwen2.5** | Qwen2.5 Technical Report | [arXiv:2412.15115](https://arxiv.org/abs/2412.15115) · Qwen Team, 2024 |
 | **GLM-4** | GLM-4 Technical Report | [arXiv:2406.12793](https://arxiv.org/abs/2406.12793) · GLM Team, 2024 |
 | **Kimi K1.5** | Kimi K1.5: Scaling Reinforcement Learning with LLMs | [arXiv:2501.12599](https://arxiv.org/abs/2501.12599) · Moonshot AI, 2025 |
+| **DeepSeek V4** | DeepSeek V4 family technical report | [arXiv:2606.19348](https://arxiv.org/abs/2606.19348) · DeepSeek-AI, 2026 |
+| **Kimi K2.6** | K2.6 report (MoE, agents, multimodal) | [arXiv:2602.02276](https://arxiv.org/abs/2602.02276) · Moonshot AI, 2026 |
+| **GLM-5.x** | GLM-5/5.2 reports | [arXiv:2602.15763](https://arxiv.org/abs/2602.15763) · [arXiv:2603.12201](https://arxiv.org/abs/2603.12201) · Z.ai, 2026 |
+| **Qwen3-TTS** | Qwen3-TTS technical report | [arXiv:2601.15621](https://arxiv.org/abs/2601.15621) · Qwen Team, 2026 |
+| **Qwen3-Embedding** | Qwen3-Embedding technical report | [arXiv:2506.05176](https://arxiv.org/abs/2506.05176) · Qwen Team, 2025 |
+| **Gemma 4** | Gemma 4 report | [arXiv:2607.02770](https://arxiv.org/abs/2607.02770) · Google DeepMind, 2026 |
+| **TRELLIS.2** | TRELLIS.2 (image-to-3D) | [arXiv:2512.14692](https://arxiv.org/abs/2512.14692) · Microsoft, 2025 |
 | **Stable Audio Open** | Stable Audio Open | [arXiv:2407.14358](https://arxiv.org/abs/2407.14358) · Evans et al., 2024 |
 | **MusicGen** | Simple and Controllable Music Generation | [audiocraft](https://github.com/facebookresearch/audiocraft) · Copet et al., 2023 |
 
@@ -1023,9 +1052,9 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 
 ---
 
-## 24. Disclaimer, SEO Notes & Contributing
+## 24. Disclaimer, SEO Notes and Contributing
 
-### ⚠️ Disclaimer — read before relying on this page
+### Disclaimer - read before relying on this page
 
 - **Fast-changing data:** Model names, parameters, context sizes, licenses, and benchmark numbers change quickly. This page is a snapshot (last updated **2026-09-09**) and may lag the newest releases.
 - **Benchmarks are vendor-reported** and run on different harnesses. They are **not directly comparable** across models. Always verify on a live leaderboard and test on your own data.
@@ -1033,7 +1062,7 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 - **License caps & revenue terms:** Llama 4 (700M MAU), Kimi K3, Qwen3.8-2.4T, Hunyuan (100M MAU), LTX (<$10M ARR), MiniMax H3 (<$20M), and FLUX.2 [dev] all have conditions. **Read the license.**
 - **Hosted API caveats:** Some APIs (e.g., DeepSeek) route through China; model license and API TOS can differ. Check before using sensitive data.
 
-### 🔍 SEO / how this page is structured
+### SEO / how this page is structured
 
 ModelAtlas is written as a **single, navigable reference** with an inverted-pyramid layout: the broadest answer comes first, detail follows. In practice this means:
 
@@ -1042,11 +1071,11 @@ ModelAtlas is written as a **single, navigable reference** with an inverted-pyra
 - A **table-first approach** — comparison tables wherever data is naturally tabular; tables are the fastest way for humans and AI to scan many models.
 - A **glossary** and an **FAQ** covering terminology and common questions without disrupting the main reading flow.
 - A **verified-link-first rule**: every external link points to the canonical source (Hugging Face, GitHub, Ollama, provider consoles, arXiv); every figure is labelled vendor-reported where it has not been independently re-evaluated.
-- **Machine-readable twins:** [`llms.txt`](llms.txt) (AI-crawler manifest), [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) (structured registry) — see [Appendix B](#appendix-b--how-this-repo-is-engineered-for-search--ai).
+- **Machine-readable twins:** [`llms.txt`](llms.txt) (AI-crawler manifest), [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) (structured registry) — see [Appendix B](#appendix-b-how-this-repo-is-engineered-for-search-and-ai).
 
 > The model landscape is dynamic. To keep this reference accurate, the "Last updated" date, version number, and vendor links should be refreshed on each revision — this repo does it automatically via [GitHub Actions](.github/workflows/refresh.yml).
 
-### 💡 Contributing
+### Contributing
 
 This is a **living directory**. To add or update a model:
 
@@ -1059,11 +1088,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
 ---
 
-## Appendix A — Benchmarks & methodology explained
+## Appendix A - Benchmarks and methodology explained
 
 Because "which model is best?" is meaningless without a benchmark, here is what each number actually measures.
 
-### Reasoning & knowledge
+### Reasoning and knowledge
 | Benchmark | What it measures | Typical open leaders (2026) |
 |---|---|---|
 | **MMLU-Pro** | Broad knowledge + reasoning (multi-step, 10 choices) | DeepSeek V4 (88+), Qwen3.8 (v.r.) |
@@ -1107,7 +1136,7 @@ Because "which model is best?" is meaningless without a benchmark, here is what 
 
 ---
 
-## Appendix B — How this repo is engineered for search & AI
+## Appendix B - How this repo is engineered for search and AI
 
 This repository is built so that **Google, Bing, and AI assistants (ChatGPT/Claude/Gemini/Grok/Perplexity-style search) surface it first** for open-source AI queries:
 
@@ -1135,7 +1164,113 @@ This repository is built so that **Google, Bing, and AI assistants (ChatGPT/Clau
 
 ---
 
-## 🏛️ Colophon
+## Appendix C - Realtime Voice, Omni and Speech-to-Speech Models
+
+2026's hottest category: talk to a model out loud and hear it answer in under 300 ms — no text in the middle. Two architectures: **cascaded** (ASR → LLM → TTS) and **native speech-to-speech** (one model, one latency). Everything below is open-weight.
+
+| Model | Org | Size | Style | License | Notes |
+|---|---|---|---|---|---|
+| **Kimi-Audio** | Moonshot AI | 7B | Native audio LLM (understand+generate+converse) | Code MIT/Apache 2.0 mix (check weights) | 13M+ hrs training (v.r.); unified audio tasks; [GitHub](https://github.com/MoonshotAI/Kimi-Audio) |
+| **Qwen2.5-Omni-7B** | Qwen | 7B | Native speech-to-speech (Thinker-Talker) | Apache 2.0 | The open omni reference; HF: `Qwen/Qwen2.5-Omni-7B` |
+| **GLM-4-Voice** | Z.ai | 9B | Native + flow-matching decoder | Apache 2.0 | Streaming; emotional control; HF: `zai-org/glm-4-voice-9b` |
+| **Step-Audio / Step-Audio-2** | StepFun | 1.6B-11B | Speech-to-speech | Apache 2.0 | Step-Audio-Chat, 2-mini, R1.1 variants on HF; any-to-any |
+| **MiniCPM-o 2.6** | OpenBMB | 8B | Omni (audio+vision+text) | Apache 2.0 (check) | All-in-one edge omni |
+| **LLaMA-Omni / Mini-Omni / Freeze-Omni** | community | 1B-8B | Speech-to-speech research | MIT/Apache | Reference architectures |
+| **CSM-1B** | Sesame | 1B | Conversational TTS | Apache 2.0 | The "voice presence" demo model |
+| **Higgs Audio V3** | Higgs | — | Speech/audio | open (check) | Served via SGLang-Omni |
+| **Voxtral 4B TTS / MOSS-TTS / VoxCPM2** | Mistral / community | 0.5-4B | Streaming TTS | open | New streaming TTS wave |
+
+**Serving stacks for voice AI (open):** [vLLM-Omni](https://github.com/vllm-project/vllm) (production streaming/batching; serves Qwen3-TTS, fishaudio S2, CosyVoice3, Voxtral…) · SGLang-Omni (Higgs Audio, Fish S2 Pro) · llama.cpp-omni (GGUF on CPU/Metal) · LocalAI (many TTS engines behind one server).
+
+**Build notes:** latency budget = ASR chunk + TTFT + streaming synthesis; for <500 ms total prefer native S2S (Qwen2.5-Omni/GLM-4-Voice) over cascades; voice-clone consent is a legal requirement in many jurisdictions, not a feature toggle.
+
+---
+
+## Appendix D - Document AI, OCR and PDF Tools
+
+Every RAG pipeline eventually hits PDFs. In 2026 the open stack reads anything: scans, tables, math, handwriting-adjacent, multi-page.
+
+| Tool / model | Org | License | Best at |
+|---|---|---|---|
+| **olmOCR** | Allen AI | Apache 2.0 | LLM-based OCR + document understanding (vLLM-servable) |
+| **GOT-OCR2** | StepFun | Apache 2.0 | Plain/formatted text, tables, formulas, music notation (~580M) |
+| **InternVL3 (8B-78B)** | OpenGVLab | Apache 2.0 (8B/14B/38B); check 78B | OCR + multilingual document VQA at scale |
+| **Qwen2.5-VL (3B-72B)** | Qwen | Apache 2.0 | Docs, charts, screenshots, video frames |
+| **Granite 4.0 3B Vision** | IBM | Apache 2.0 | Compact governed document vision |
+| **Florence-2-Large** | Microsoft | MIT | Region detection + captioning + OCR (~0.8B) |
+| **Nougat** | Meta | CC-BY-NC | PDF→LaTeX for scientific papers (research-only!) |
+| **Chandra (~3B)** | Datalab | Apache 2.0 | Layout + markdown + structured blocks, local/vLLM |
+| **MinerU 2.5** | OpenDataLab | AGPL 3.0 | Best table extraction pipeline (AGPL: comply or buy) |
+| **Surya** | Datalab | GPL + commercial | Multilingual layout + reading order |
+| **Marker** | Datalab | GPL + commercial | PDF→Markdown pipeline with the biggest user base |
+| **DocLayout-YOLO** | — | AGPL 3.0 | Layout detection only (50M) |
+| **ColPali v1.3 / ColQwen2** | Vidore/ILLU | MIT / Apache | Page-level retrieval *without OCR* (visual embeddings) |
+| **LightOnOCR / MonkeyOCR / OCRFlux / RolmOCR** | community | Apache/MIT mix | Fast or specialized OCR variants |
+
+**License trap:** Marker/Surya/MinerU are (A)GPL — great locally, but a SaaS wrapper needs the commercial license. Apache/MIT picks: olmOCR, GOT-OCR2, Chandra, Qwen2.5-VL.
+
+---
+
+## Appendix E - Free and Low-Cost API Tiers for Testing Open Models
+
+Want to try before you buy a GPU? (Numbers move — verify in each dashboard; sources: provider docs, June-July 2026 surveys.)
+
+| Provider | Free tier (approx) | Notable models | Card needed? |
+|---|---|---|---|
+| **Google Gemini API / AI Studio** | ~1,500 req/day tier, generous free tokens | Gemini 2.5 Flash-class (proprietary) | No |
+| **Groq** | 30 RPM / ~14.4K req/day | Llama 3.3 70B, Qwen, gpt-oss, Kimi K2 | No |
+| **Cerebras** | ~30 RPM / 14.4K req/day | Llama variants (very fast) | No |
+| **OpenRouter** | `:free` models: ~20 RPM, 50 RPD (more with $10 credits) | DeepSeek R1, Qwen3-Coder-480B, Llama 4 Scout and 28+ more | No |
+| **DeepSeek API** | signup grant (historically ~5M tokens) | DeepSeek V4 / V3.2 | No |
+| **Mistral (La Plateforme)** | Codestral free key (30 RPM); limited tiers | Codestral, Devstral | Eventually |
+| **Hugging Face Inference** | serverless few-hundred req/hr (<10B models); $0.10/mo credit | any small open model | No |
+| **GitHub Models** | playground + rate-limited API | gpt-oss, Llama, Qwen, Mistral | No (GH account) |
+| **Cohere** | 1,000 calls/month | Command R+ (not fully open) | Yes |
+| **Together / Fireworks** | $1 one-time credit each | 200+ open models | Yes |
+
+**Playbook:** OpenRouter for breadth with one key → Groq/Cerebras when latency matters → DeepSeek/GLM/ Qwen official APIs for the cheapest frontier tokens → HF serverless to test any new small model. Treat free tiers as dev-only: rate caps and data-use terms make them unsuitable for production customer data.
+
+---
+
+## Appendix F - GPU and Hardware Buying Guide
+
+VRAM is destiny (§16). Approx. 2026 street prices — check locally, they move.
+
+| GPU | VRAM | Fits (Q4) | Approx. price | Verdict |
+|---|---|---|---|---|
+| RTX 5090 | 32 GB | 27-31B dense, up to ~70B with offload | ~$2,000-2,600 | The consumer king; huge bandwidth |
+| RTX 4090 / 3090 Ti | 24 GB | 27-31B dense | $1,500-2,200 (used 3090 ~$800-1,000) | Best 24GB buys; 3090 used = value king |
+| RTX 5080 / 5070 Ti | 16 GB | 14B, 20-24B MoE | $750-1,100 | New-gen 16GB sweet spot |
+| RTX 5060 Ti 16 GB | 16 GB | same | ~$430 | Cheapest new 16GB |
+| Intel Arc B580 | 12 GB | 14B tight | ~$250 | Budget pick if software support suffices |
+| RTX 3060 12GB / 4060 Ti 16GB | 12-16 GB | 8-14B | $300-500 | Entry local AI |
+| RTX 5070 (12 GB) / 4060 (8 GB) | 8-12 GB | ≤8B | $300-550 | Fine for 8B |
+| H100 / H200 / B200 | 80-192 GB | 120B+ MoE, training | cloud/$25k+ | Data center; rent, don't buy |
+| Apple M4/M5 Max/Ultra (Mac Studio) | 64-512 GB unified | 70B+ dense at Q4 (memory-bound, ~20-40 tok/s) | $4k-10k | Best single-box big-context option |
+| Used datacenter (P100 16GB / A6000 48GB) | 16-48 GB | up to 70B splits | varies | e-waste bargains with caveats (no FP16 on P100 etc.) |
+
+**Budget build recipes (2026):**
+- **$0 extra** — you already own it: Ollama + Qwen3:4b/8B on CPU (16GB RAM) or gpt-oss-20b.
+- **~$1,500 new** — RTX 5070 Ti 16GB or 5060 Ti×2 (NVLink not needed; use tensor-split via llama.cpp/vLLM) → 14-32B models.
+- **~$2,500 new** — RTX 5090 32GB → 27-31B dense fast + MoE 70B-class at Q4 with offload.
+- **~$1,000 used** — 2× used RTX 3090 (24GB each, 48GB total) → 70B Q4 with tensor parallelism; the community favorite.
+- **Rent instead** — RunPod/Vast/Together for anything ≥120B: $/hr GPU beats $/week idle.
+- **Mac users** — 64GB+ M-series unified memory runs 30-70B Q4 comfortably; MLX tooling is excellent.
+
+**Buying rules:** (1) VRAM > speed > brand; (2) check bandwidth (5090 ~1.8TB/s, 4090 ~1TB/s); (3) 2× smaller GPUs beat 1× bigger for MoE; (4) never buy <12GB new in 2026; (5) for training buy compute-hours, for inference buy VRAM.
+
+---
+
+## Appendix G - Changelog
+
+Full history in [CHANGELOG.md](CHANGELOG.md).
+
+| Date | Version | What changed |
+|---|---|---|
+| 2026-09-09 | 2026.09 (this refresh) | Link-audit pass: verified ~40 Hugging Face ids/orgs live (fixed Qwen3.5→`Qwen3.5-397B-A17B`, Mistral Large 3, Wan 2.2, TRELLIS.2, Gemma 4 case, Qwen3-TTS, removed dead ids); fixed GitHub-anchor links across 56 heading renames; added Kimi K2.7-Code, Hunyuan Hy3, Seed-OSS-36B, Qwen3.5-9B/4B, Qwen3.6-35B-A3B; corrected multimodality of Qwen3.5/3.6/3.8 and Kimi K2.6; license corrections (MiniMax M2.5, Moonshot >$20M term, Qwen3.8-2.4T terms); new Appendices C-G (voice/omni, document AI, free tiers, GPU buying, changelog); new arXiv references; registry 88 → 101 models |
+| 2026-09-09 | 2026.09 (initial) | Full ModelAtlas rebuilt: sections 1-24 + appendices A-B, llms.txt, structured registry, weekly refresh workflow |
+
+## Colophon
 
 *ModelAtlas: The Open-Source AI Model Atlas — A Research-Grade Survey of Open-Weight AI (2026 Edition)* is maintained by the **Open-Source AI Research Editorial Collective** and hosted in the public GitHub repository [`Amitmishra98/.p`](https://github.com/Amitmishra98/.p).
 
@@ -1144,7 +1279,7 @@ This repository is built so that **Google, Bing, and AI assistants (ChatGPT/Clau
 
 **Primary reference hubs:** [Arena](https://arena.ai/leaderboard) · [Hugging Face](https://huggingface.co) · [GitHub](https://github.com) · [Ollama](https://ollama.com/library) · [ModelScope](https://modelscope.cn) · [OpenRouter](https://openrouter.ai) · [LM Studio](https://lmstudio.ai)
 
-**Indexed for the following queries:** *best open source LLM 2026 · open source AI models list · free AI model download · run AI locally · open source image/video/speech/3D models · LLM benchmarks · VRAM requirements · open source AI licenses · AI agent frameworks · free AI API tiers · best local LLM · MoE models explained · SWE-bench open weights · open model commercial use.*
+**Indexed for the following queries:** *best open source LLM 2026 · open source AI models list · free AI model download · run AI locally · open source image/video/speech/3D models · LLM benchmarks · VRAM requirements · open source AI licenses · AI agent frameworks · free AI API tiers · best local LLM · MoE models explained · SWE-bench open weights · open model commercial use · realtime voice AI open source · speech to speech model · open source OCR document AI · best GPU for local LLM · Qwen3.8 · Kimi K2.7 · GLM-5.2 · DeepSeek V4 · Hunyuan Hy3.*
 
 ---
 

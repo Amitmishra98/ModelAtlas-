@@ -7,9 +7,10 @@
 ├── LICENSE                        ← CC BY 4.0 (docs) + MIT (scripts); models keep own licenses
 ├── SECURITY.md
 ├── CONTRIBUTING.md
+├── CHANGELOG.md                    ← versioned change history (audit trail)
 ├── CODE_OF_CONDUCT.md
 ├── data/
-│   ├── models.json                ← structured model registry (88 models, Sept 2026)
+│   ├── models.json                ← structured model registry (101 models, Sept 2026)
 │   └── models.csv                 ← same registry as CSV (generated)
 ├── scripts/
 │   ├── generate_registry.py       ← EDIT THIS to add/update registry rows, then run it

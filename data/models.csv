@@ -1,38 +1,38 @@
 id,name,org,category,params_total,params_active,architecture,context,modality,license,release,ollama,hf,github,api,notes,commercial
 deepseek-v4-pro-0813,DeepSeek V4-Pro-0813,DeepSeek,llm,1.6T,49B,MoE,1M,text,MIT,2026-08-13,,deepseek-ai/DeepSeek-V4-Pro-0813,https://github.com/deepseek-ai,https://platform.deepseek.com,GA build; open weights; reasoning efforts; 384K max output,True
 qwen3.8-2.4t-a95b,Qwen3.8-2.4T-A95B,Qwen (Alibaba),llm,2.4T,95B,"MoE (512 experts, hybrid Gated-DeltaNet attention)",262K-1M,text,Qwen3.8-Max license (custom),2026-08-12,,Qwen/Qwen3.8-2.4T-A95B,https://github.com/QwenLM,https://www.alibabacloud.com/product/bailian,Open twin of Qwen3.8-Max; ~400GB at 1-bit; 27B sibling is Apache 2.0,True
-kimi-k2.6,Kimi K2.6,Moonshot AI,llm,1T,32B,MoE (agent-swarm lineage),262K,text+image,Modified MIT,2026-04-20,,moonshotai/Kimi-K2.6,https://github.com/MoonshotAI/Kimi-K2,https://platform.moonshot.ai,Long-horizon agents; ties GPT-5.5-class on SWE-bench Pro (v.r.),True
+kimi-k2.6,Kimi K2.6,Moonshot AI,llm,1T,32B,MoE (agent-swarm lineage),262K,text+image+video,Modified MIT,2026-04-20,,moonshotai/Kimi-K2.6,https://github.com/MoonshotAI/Kimi-K2,https://platform.moonshot.ai,Long-horizon agents; ties GPT-5.5-class on SWE-bench Pro (v.r.),True
 glm-5.2,GLM-5.2,Z.ai (Zhipu),llm,744B,,MoE,1M,text,MIT,2026-06-13,,zai-org/GLM-5.2,https://github.com/zai-org/GLM-5,https://z.ai,Open weights BF16+FP8; agentic coding; GLM Coding Plan,True
-qwen3.5,Qwen3.5,Qwen (Alibaba),llm,397B,17B,MoE,1M,text+vision (computer-use),Apache 2.0,2026-02-16,,Qwen/Qwen3.5,https://github.com/QwenLM/Qwen3,https://www.alibabacloud.com/product/bailian,Agentic era flagship; visual agentic capabilities,True
-qwen3.6,Qwen3.6,Qwen (Alibaba),llm,,,MoE,256K,text,Apache 2.0,2026-04-16,,Qwen/Qwen3.6,https://github.com/QwenLM,https://www.alibabacloud.com/product/bailian,Open release after 3.5,True
+qwen3.5,Qwen3.5-397B-A17B,Qwen (Alibaba),llm,397B,17B,MoE,1M,text+image+video,Apache 2.0,2026-02-16,,Qwen/Qwen3.5-397B-A17B,https://github.com/QwenLM/Qwen3,https://www.alibabacloud.com/product/bailian,Agentic flagship; native image+video input; computer-use agents,True
+qwen3.6,Qwen3.6-35B-A3B,Qwen (Alibaba),llm,35B,3B,MoE,256K,text+image+video,Apache 2.0,2026-04-15,,Qwen/Qwen3.6-35B-A3B,https://github.com/QwenLM,https://www.alibabacloud.com/product/bailian,Small flagship; image/video input; huge GGUF ecosystem,True
 qwen3-235b-a22b,Qwen3-235B-A22B,Qwen (Alibaba),llm,235B,22B,MoE,256K,text,Apache 2.0,2025-07,qwen3:235b,Qwen/Qwen3-235B-A22B-Instruct,https://github.com/QwenLM/Qwen3,,Best-documented self-host MoE; thinking mode,True
-mistral-large-3,Mistral Large 3,Mistral AI,llm,675B,41B,MoE (2.5B vision encoder incl.),256K,text+image,Apache 2.0,2025-12-02,,mistralai/Mistral-Large-3,https://github.com/mistralai,https://mistral.ai,Largest open MoE from a Western lab; 40-100+ languages,True
+mistral-large-3,Mistral Large 3,Mistral AI,llm,675B,41B,MoE (2.5B vision encoder incl.),256K,text+image,Apache 2.0,2025-12-02,,mistralai/Mistral-Large-3-675B-Instruct-2512-BF16,https://github.com/mistralai,https://mistral.ai,Largest open MoE from a Western lab; 40-100+ languages,True
 llama-4-maverick,Llama 4 Maverick,Meta,llm,402B,17B,MoE (128 experts),1M,text+image in,Llama 4 Community (700M MAU cap),2025-04,,meta-llama/Llama-4-Maverick-17B-128E-Instruct,https://github.com/meta-llama/llama-models,,Native tool use; fine-tunes restricted >700M MAU,True
 llama-4-scout,Llama 4 Scout,Meta,llm,109B,17B,MoE (16 experts),10M,text+image in,Llama 4 Community,2025-04,,meta-llama/Llama-4-Scout-17B-16E-Instruct,https://github.com/meta-llama/llama-models,,Longest context of any model; single 80GB GPU at Q4,True
 deepseek-v3.2,DeepSeek V3.2 / V3.2-Speciale,DeepSeek,llm,685B,37B,MoE,128K,text,MIT,2025-09,,deepseek-ai/DeepSeek-V3.2,https://github.com/deepseek-ai,https://platform.deepseek.com,Proven workhorse; huge ecosystem,True
 deepseek-v4-flash,DeepSeek V4-Flash-0731,DeepSeek,llm,,,MoE,128K+,text,MIT,2026-07-31,deepseek-v4-flash,deepseek-ai/DeepSeek-V4-Flash,https://github.com/deepseek-ai,https://platform.deepseek.com,Cheap fast tier; open weights 166.9GB (48 shards),True
-gemma-4-31b,Gemma 4 31B,Google DeepMind,llm,31B,,Dense,128K+,text+image (+audio in edge variants),Apache 2.0,2026-04-02,google/gemma-4-31b-it,google/gemma-4-31b-it,https://github.com/google-gemma,,Frontier-dense on one GPU (~18-22GB Q4); token-efficient (v.r.),True
-gemma-4-26b-a4b,Gemma 4 26B-A4B,Google DeepMind,llm,26B,4B,MoE,128K+,text+image,Apache 2.0,2026-04-02,google/gemma-4-26b-it,google/gemma-4,,,MoE efficiency tier,True
-gemma-4-e4b,Gemma 4 E4B / E2B,Google DeepMind,llm,5-8B,,Dense (edge),128K,text+image+audio,Apache 2.0,2026-04-02,gemma4:e4b,google/gemma-4,,,Phone/laptop; E4B ~3GB,True
+gemma-4-31b,Gemma 4 31B,Google DeepMind,llm,31B,,Dense,128K+,text+image (+audio in edge variants),Apache 2.0,2026-04-02,google/gemma-4-31b-it,google/gemma-4-31B-it,https://github.com/google-gemma,,Frontier-dense on one GPU (~18-22GB Q4); token-efficient (v.r.),True
+gemma-4-26b-a4b,Gemma 4 26B-A4B,Google DeepMind,llm,26B,4B,MoE,128K+,text+image,Apache 2.0,2026-04-02,google/gemma-4-26b-it,,,,MoE efficiency tier,True
+gemma-4-e4b,Gemma 4 E4B / E2B,Google DeepMind,llm,5-8B,,Dense (edge),128K,text+image+audio,Apache 2.0,2026-04-02,gemma4:e4b,,,,Phone/laptop; E4B ~3GB,True
 gpt-oss-120b,gpt-oss-120b,OpenAI,reasoning,117B,5.1B,"MoE (36 layers, MXFP4)",131K,text,Apache 2.0,2025-08,gpt-oss:120b,openai/gpt-oss-120b,https://github.com/openai/openai-open-models,,Not on OpenAI API; fits single 80GB GPU,True
 gpt-oss-20b,gpt-oss-20b,OpenAI,reasoning,21B,3.6B,MoE (MXFP4),131K,text,Apache 2.0,2025-08,gpt-oss:20b,openai/gpt-oss-20b,,,Laptop reasoning pick (~16GB),True
 glm-4.7,GLM-4.7,Z.ai (Zhipu),coding,355B,32B,MoE,128K+,text,MIT,2025-10,glm-4.7,zai-org/GLM-4.7,https://github.com/zai-org/GLM-4.7,https://z.ai,Production agentic workhorse,True
-qwen3-coder-next,Qwen3-Coder-Next,Qwen (Alibaba),coding,,,MoE,256K,text,Apache 2.0,2026-02-03,,Qwen/Qwen3-Coder-Next,https://github.com/QwenLM,,IDE-grade tool use,True
+qwen3-coder-next,Qwen3-Coder-Next,Qwen (Alibaba),coding,,,MoE,256K,text,Apache 2.0,2026-02-03,,Qwen,https://github.com/QwenLM,,IDE-grade tool use,True
 qwen3-coder-30b,Qwen3-Coder-30B,Qwen (Alibaba),coding,30B,3B,MoE,128K,text,Apache 2.0,2025-07,qwen3-coder:30b,Qwen/Qwen3-Coder-30B-A3B-Instruct,,,Best open 30B coder,True
-devstral-small-2,Devstral Small 2,Mistral AI,coding,24B,,Dense,128K,text,Apache 2.0,2026,devstral:24b,mistralai/Devstral-Small-2-24B,,,Open SWE-agent default,True
-minimax-m2.5,MiniMax M2.5,MiniMax,llm,~200B,,MoE,~200K,text,Apache 2.0,2026,,MiniMaxAI/MiniMax-M2.5,,https://www.minimax.io,SWE-bench ~80 (v.r.),True
-mimo-v2-flash,MiMo-V2-Flash,Xiaomi,llm,,,MoE,256K,text,MIT,2026,,XiaomiMiMo/MiMo-V2-Flash,,,Surprise efficiency leader,True
-sarvam-105b,Sarvam 105B,Sarvam AI,llm,105B,,MoE,128K,text,Sarvam license,2026,,sarvamai/Sarvam-105B,,,Indic-language frontier (22 languages),True
+devstral-small-2,Devstral Small 2,Mistral AI,coding,24B,,Dense,128K,text,Apache 2.0,2026,devstral:24b,mistralai,,,Open SWE-agent default,True
+minimax-m2.5,MiniMax M2.5,MiniMax,llm,~200B,,MoE,~200K,text,MiniMax community (custom LICENSE-MODEL),2026-02-12,,MiniMaxAI/MiniMax-M2.5,,https://www.minimax.io,SWE-bench ~80 (v.r.); FP8; NVIDIA NVFP4 quant available,True
+mimo-v2-flash,MiMo-V2-Flash,Xiaomi,llm,,,MoE,256K,text,MIT,2025-12,,XiaomiMiMo/MiMo-V2-Flash,,,Surprise efficiency leader,True
+sarvam-105b,Sarvam 105B,Sarvam AI,llm,105B,,MoE,128K,text,Sarvam license,2026,,sarvamai,,,Indic-language frontier (22 languages),True
 qwen3-8b,Qwen3-8B,Qwen (Alibaba),llm,8B,,Dense,128K,text,Apache 2.0,2025-04,qwen3:8b,Qwen/Qwen3-8B,,,The default free local LLM; 201 languages,True
 qwen3.8-27b,Qwen3.8-27B,Qwen (Alibaba),llm,27B,,Dense,262K+,text,Apache 2.0,2026-08-03,qwen3.8:27b,Qwen/Qwen3.8-27B,,,Flagship-per-GPU; Apache 2.0,True
 phi-4-mini,Phi-4-mini,Microsoft,llm,3.8B,,Dense,128K,text,MIT,2025-02,phi4-mini,microsoft/Phi-4-mini-instruct,,,CPU-friendly edge default,True
 phi-4-reasoning,Phi-4-Reasoning,Microsoft,reasoning,14B,,Dense,128K,text,MIT,2025-04,,microsoft/Phi-4-reasoning-plus,,,Edge reasoning research,True
 deepseek-r1,DeepSeek-R1,DeepSeek,reasoning,671B,37B,MoE (CoT RL),128K,text,MIT,2025-01,deepseek-r1:671b,deepseek-ai/DeepSeek-R1,,,The open reasoning legend,True
 deepseek-r1-distill-14b,DeepSeek-R1-Distill-14B,DeepSeek,reasoning,14B,,Dense (distill),128K,text,MIT,2025-01,deepseek-r1:14b,deepseek-ai/DeepSeek-R1-Distill-Qwen-14B,,,Laptop reasoning ~9GB,True
-magistral-small,Magistral Small,Mistral AI,reasoning,~30B,,Dense,128K,text,Apache 2.0,2026,,mistralai/Magistral-Small,,,"Self-hosted reasoning, EU",True
+magistral-small,Magistral Small,Mistral AI,reasoning,~30B,,Dense,128K,text,Apache 2.0,2026,,mistralai,,,"Self-hosted reasoning, EU",True
 minimax-m2.5-vlm,MiniMax M2 (VLM),MiniMax,vlm,~200B,,MoE,~200K,text+image,Apache 2.0,2025,,MiniMaxAI/MiniMax-M2,,,Multimodal agentic model,True
-ui-tars,UI-TARS,ByteDance,vlm,,,,,GUI agent,Apache 2.0 (check weights),2025,,bytedance-research/UI-TARS,,,GUI computer-use model,True
-qwen3-vl,Qwen3-VL,Qwen (Alibaba),vlm,8-72B,,VLM,128K+,text+image+video,Apache 2.0,2025,,Qwen/Qwen3-VL-32B-Instruct,,,Doc/UI vision champion lineage,True
+ui-tars,UI-TARS,ByteDance,vlm,,,,,GUI agent,Apache 2.0 (check weights),2025,,,https://github.com/bytedance/UI-TARS,,GUI computer-use model,True
+qwen3-vl,Qwen3-VL,Qwen (Alibaba),vlm,8-72B,,VLM,128K+,text+image+video,Apache 2.0,2025,,Qwen,,,Doc/UI vision champion lineage,True
 qwen2.5-vl,Qwen2.5-VL,Qwen (Alibaba),vlm,3-72B,,VLM,128K,text+image+video,Apache 2.0,2025,,Qwen/Qwen2.5-VL-72B-Instruct,,,Document/UI vision classic,True
 qwen-image-2512,Qwen-Image-2512,Qwen (Alibaba),image,20B+,,DiT+LLM,,image,Apache 2.0,2025-12,,Qwen/Qwen-Image-2512,https://github.com/QwenLM/Qwen-Image,,"Open #1 (10k+ blind rounds, v.r.); multilingual text incl. Arabic RTL",True
 flux-2-dev,FLUX.2 [dev],Black Forest Labs,image,32B,,DiT,,image,FLUX.2 [dev] Non-Commercial,2025-11,,black-forest-labs/FLUX.2-dev,,https://bfl.ai,Photorealism king; commercial >$100k revenue needs license,False
@@ -41,7 +41,7 @@ z-image-turbo,Z-Image-Turbo,Z.ai (Zhipu),image,6B,,Distilled diffusion,,image,Ap
 glm-image,GLM-Image,Z.ai (Zhipu),image,9B+7B,,AR + DiT hybrid,,image,MIT,2025,,zai-org/GLM-Image,,,Best typography/posters,True
 sd-3.5-large,Stable Diffusion 3.5 Large,Stability AI,image,8B,,MMDiT,,image,Stability Community,2024-10,,stabilityai/stable-diffusion-3.5-large,,,The LoRA ecosystem king,True
 hunyuanimage-3,HunyuanImage 3.0,Tencent,image,80B,13B,Multimodal AR MoE,,image,Tencent Hunyuan Community,2026,,Tencent-Hunyuan/HunyuanImage-3.0,,,Long complex prompts; 40GB+,True
-wan-2.2,Wan 2.2 / 2.5,Wan (Alibaba),video,1.3B-14B,,DiT,,video (+audio in 2.5),Apache 2.0,2025,,Wan-AI/Wan2.2-T2V-14B,https://github.com/Wan-Video/Wan2.2,,Cleanest commercial license,True
+wan-2.2,Wan 2.2 / 2.5,Wan (Alibaba),video,1.3B-14B,,DiT,,video (+audio in 2.5),Apache 2.0,2025,,Wan-AI/Wan2.2-T2V-A14B,https://github.com/Wan-Video/Wan2.2,,Cleanest commercial license,True
 ltx-2.5,LTX-2.5,Lightricks,video,22B,,Video DiT,,video+audio,LTX Community (<$10M ARR),2026,,Lightricks/LTX-2.5,,,4K/20s local + native audio,True
 minimax-h3,MiniMax H3 (Hailuo 3.0),MiniMax,video,33.1B,,,,video+audio,MiniMax Community (<$20M rev),2026,,MiniMaxAI/MiniMax-H3,,https://www.minimax.io,Reference-heavy scenes; stereo audio,True
 hunyuanvideo-1.5,HunyuanVideo 1.5,Tencent,video,13B,,MMDiT,,video+audio,Tencent Hunyuan Community (100M MAU),2025,,Tencent-Hunyuan/HunyuanVideo-1.5,,,Cinematic 720p/15s; modest hardware,True
@@ -52,7 +52,7 @@ ace-step-1.5,ACE-Step 1.5,ACE / FunAudio,music,,,Hybrid LM,,music,open weights (
 musicgen,MusicGen,Meta,music,1.5B,,EnCodec+Transformer,,music,MIT code / CC-BY-NC weights,2023,,,https://github.com/facebookresearch/audiocraft,,Classic baseline,False
 stable-audio-open,Stable Audio Open,Stability AI,music,,,,,audio (SFX/stems),Stability Community,2024,,stabilityai/stable-audio-open-1.0,,,Text→SFX/music,True
 kokoro,Kokoro-82M,Hexgrad,tts,82M,,,,speech,Apache 2.0,2025,kokoro,hexgrad/Kokoro-82M,,,CPU real-time; ~200x RT on GPU; 54 presets,True
-qwen3-tts,Qwen3-TTS,Qwen (Alibaba),tts,0.6B-1.7B,,,,speech,Apache 2.0,2026-01,,Qwen/Qwen3-TTS,,,"3-second cloning, 10 langs, NL emotion control, 97ms streaming",True
+qwen3-tts,Qwen3-TTS,Qwen (Alibaba),tts,0.6B-1.7B,,,,speech,Apache 2.0,2026-01,,Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice,,,"3-second cloning, 10 langs, NL emotion control, 97ms streaming",True
 chatterbox,Chatterbox (Turraa),Resemble AI,tts,0.35B-1.2B,,,,speech,MIT,2025,,ResembleAI/chatterbox,,,"5-10s cloning, 23 langs (multilingual variant)",True
 cosyvoice-3,CosyVoice 3.0,FunAudioLLM,tts,0.5B,,,,speech,Apache 2.0,2025,,,https://github.com/FunAudioLLM/CosyVoice,,"Zero-shot clone, 150ms streaming",True
 f5-tts,F5-TTS,community,tts,0.3B,,Flow matching,,speech,MIT,2024-10,,,https://github.com/SWivid/F5-TTS,,Fast cloning (33x Fast),True
@@ -74,16 +74,29 @@ mxbai-embed-large,mxbai-embed-large,Mixedbread,embedding,335M,,,512,text→vecto
 bge-reranker-v2,BGE-reranker-v2-m3,BAAI,reranker,~570M,,,8K,text scoring,MIT,2024,bge-reranker-v2-m3,BAAI/bge-reranker-v2-m3,,,Production default reranker,True
 qwen3-reranker,Qwen3-Reranker,Qwen (Alibaba),reranker,,,,,text scoring,Apache 2.0,2025,,Qwen/Qwen3-Reranker,,,Multilingual reranking,True
 hunyuan3d-2,Hunyuan3D 2.x,Tencent,model3d,,,Multi-view diffusion,,image→3D mesh+PBR,Tencent Hunyuan Community,2025-2026,,Tencent-Hunyuan/Hunyuan3D-2.0,https://github.com/Tencent-Hunyuan/Hunyuan3D-2,,Best open mesh+texture quality,True
-trellis-2,TRELLIS.2,Microsoft,model3d,4B,,Structured latent,,image→3D (PBR to 4K),MIT,2025-12,,microsoft/TRELLIS-2,https://github.com/microsoft/TRELLIS,,Cleanest 3D license; GLB/OBJ/PLY,True
+trellis-2,TRELLIS.2,Microsoft,model3d,4B,,Structured latent,,image→3D (PBR to 4K),MIT,2025-12,,microsoft/TRELLIS.2-4B,https://github.com/microsoft/TRELLIS,,Cleanest 3D license; GLB/OBJ/PLY,True
 triposr,TripoSR,Stability AI + Tripo,model3d,,,Feed-forward reconstruction,,image→3D,Apache 2.0 (check),2024,,stabilityai/TripoSR,,,Sub-second real-time,True
 stable-fast-3d,Stable Fast 3D,Stability AI,model3d,,,Feed-forward,,image→textured mesh,Stability Community,2024-08,,stabilityai/stable-fast-3d,,,<1s on H100,True
 sam3d,SAM 3D,Meta,model3d,,,,,photo→gaussian splat/mesh,SAM License,2025-11,,,https://github.com/facebookresearch/sam3d,,Objects + human body from one photo,True
-smollm3-3b,SmolLM3-3B,Hugging Face,llm,3B,,Dense,128K,text,Apache 2.0,2025,,HuggingFaceTB/SmolLM3-3B,,,Fully open (data+code+weights),True
-olmo-2,OLMo 2,AI2,llm,7B-32B,,Dense,8K+,text,Apache 2.0,2025,,allenai/OLMo-2-32B,,,Fully open (data+code+weights),True
+smollm3-3b,SmolLM3-3B,Hugging Face,llm,3B,,Dense,128K,text,Apache 2.0,2025,,HuggingFaceTB,,,Fully open (data+code+weights),True
+olmo-2,OLMo 2,AI2,llm,7B-32B,,Dense,8K+,text,Apache 2.0,2025,,allenai,,,Fully open (data+code+weights),True
 pythia,Pythia,EleutherAI,llm,12B,,Dense,2K,text,Apache 2.0,2023,,EleutherAI/pythia-12b,,,Fully-open research lineage,True
 falcon-3,Falcon 3,TII,llm,1B-235B,,Dense+Mamba-hybrid,32K+,text,Apache 2.0,2024-12,,tiiuae/Falcon3-235B-Instruct,,,UAE open family,True
-granite,IBM Granite 3.x,IBM,llm,1B-34B,,Dense,128K,text,Apache 2.0,2024-2025,,ibm-granite/granite-3.2-8b-instruct,,,Enterprise governance,True
+granite,IBM Granite 3.x,IBM,llm,1B-34B,,Dense,128K,text,Apache 2.0,2024-2025,,ibm-granite,,,Enterprise governance,True
 mixtral-8x7b,Mixtral 8x7B,Mistral AI,llm,47B,13B,MoE,32K,text,Apache 2.0,2023-12,mixtral,mistralai/Mixtral-8x7B-Instruct-v0.1,,,The MoE that made sparse famous,True
 llama-3.3-70b,Llama 3.3 70B,Meta,llm,70B,,Dense,128K,text,Llama 3.3 Community,2024-12,llama3.3:70b,meta-llama/Llama-3.3-70B-Instruct,,,Most-deployed open 70B,True
 llama-3.1-8b,Llama 3.1 8B,Meta,llm,8B,,Dense,128K,text,Llama 3.1 Community,2024-07,llama3.1:8b,meta-llama/Llama-3.1-8B-Instruct,,,Classic single-GPU default,True
 deepseek-v4-flash-vision,DeepSeek V4-Flash-Vision-Exp,DeepSeek,vlm,305B,,Multimodal MoE (FP8),,text+image,MIT,2026-08-31,,deepseek-ai/DeepSeek-V4-Flash-Vision-Exp,,,First V4 vision model; experimental,True
+kimi-k2.7-code,Kimi K2.7-Code,Moonshot AI,llm,1T,32B,MoE (compressed-tensors 4-bit pack),256K,text+image+video,Modified MIT,2026-06-12,,moonshotai/Kimi-K2.7-Code,https://github.com/MoonshotAI/Kimi-K2,https://platform.moonshot.ai,"Coding specialist; +21.8% Kimi Code Bench v2, -30% reasoning tokens (v.r.); ~595GB; vLLM/SGLang day-one",True
+qwen3.5-9b,Qwen3.5-9B / 4B,Qwen (Alibaba),llm,4B-9B,,Dense,256K,text+image+video,Apache 2.0,2026-02-27,,Qwen/Qwen3.5-9B,https://github.com/QwenLM/Qwen3,,Small multimodal agentic Qwen3.5 sizes,True
+hunyuan-hy3,Hunyuan Hy3,Tencent,llm,295B,21B,MoE,256K,text,Apache 2.0,2026-07-06,,,https://github.com/Tencent-Hunyuan,,Open-weight reasoning/agents; reasoning_effort knob; Apache 2.0 (HF org: Tencent-Hunyuan),True
+seed-oss-36b,Seed-OSS-36B,ByteDance Seed,reasoning,36B,,Dense,32K,text,Apache 2.0,2025-08-20,,ByteDance-Seed/Seed-OSS-36B-Instruct,https://github.com/ByteDance-Seed/Seed-OSS,,ByteDance rare open-weight release; dense thinking model,True
+qwen2.5-omni-7b,Qwen2.5-Omni-7B,Qwen (Alibaba),omni,7B,,Thinker-Talker,32K,speech+text+image+video,Apache 2.0,2025-03,,Qwen/Qwen2.5-Omni-7B,https://github.com/QwenLM/Qwen2.5-Omni,,The open realtime speech-to-speech reference,True
+glm-4-voice,GLM-4-Voice,Z.ai (Zhipu),omni,9B,,Flow-matching decoder,,speech+text,Apache 2.0,2025-03,,zai-org/glm-4-voice-9b,https://github.com/zai-org/GLM-4-Voice,,Streaming speech-to-speech with emotion control,True
+kimi-audio,Kimi-Audio,Moonshot AI,omni,7B,,Audio LLM,,audio understand+generate+converse,Code MIT/Apache-2.0 (check weights),2025-02,,moonshotai,https://github.com/MoonshotAI/Kimi-Audio,,13M+ hours training (v.r.); unified audio foundation model,True
+step-audio,Step-Audio,StepFun,omni,,,Speech-to-speech,,speech+text,Apache 2.0,2025-02,,stepfun-ai/Step-Audio-Chat,https://github.com/stepfun-ai/Step-Audio,,130+ language claims (v.r.),True
+minicpm-o-2.6,MiniCPM-o 2.6,OpenBMB,omni,8B,,Omni,,speech+text+image+video,Apache 2.0 (check),2025-01,,openbmb,https://github.com/OpenBMB/MiniCPM-o,,Edge omni: audio+vision+text,True
+olmocr,olmOCR,Allen Institute for AI,ocr,7B,,Qwen2.5-VL based,,document image to text,Apache 2.0,2025-01,,allenai/olmOCR-7B-0225-preview,https://github.com/allenai/olmocr,,LLM-grade OCR for documents; vLLM-servable,True
+got-ocr2,GOT-OCR2,StepFun,ocr,580M,,Encoder-decoder,,document OCR,Apache 2.0,2025,,stepfun-ai,https://github.com/Ucas-HaoranWei/GOT-OCR2.0,,"Text, tables, formulas, music notation",True
+internvl3-8b,InternVL3 8B/78B,OpenGVLab (Shanghai AI Lab),vlm,8B-78B,,VLM,128K,text+image+video,Apache 2.0 (8B); other (78B - check),2025,,OpenGVLab/InternVL3-8B,https://github.com/OpenGVLab/InternVL,,"OCR + multilingual document VQA; 8B/14B/38B Apache, 78B license:other",True
+minicpm5-2b,MiniCPM5-2B,OpenBMB,llm,2B,,Dense,,text,Apache 2.0,2026-09-06,,openbmb/MiniCPM5-2B,https://github.com/OpenBMB/MiniCPM,,"Sep 2026; edge-ai text gen, tool calling, long context; GGUF same-day",True
