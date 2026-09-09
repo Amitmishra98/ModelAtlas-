@@ -1,31 +1,32 @@
 <div align="center">
 
-# ModelAtlas - The Open-Source AI Model Atlas
+# ModelAtlas - the open-source AI model directory (2026 edition)
 
-### The most complete, research-grade directory of open-weight and open-source AI - LLMs, MoE, reasoning, coding, multimodal, image, video, audio, TTS/ASR, embeddings, 3D, agents, licenses, hardware, benchmarks and local setup
+### Every important open-weight and open-source AI model in one directory: LLMs, MoE, reasoning, coding, vision, image, video, audio, TTS/ASR, embeddings, 3D, agents, licenses, VRAM guides, benchmarks - plus free API tiers and one-command local installs
 
 [![License: CC BY 4.0](https://img.shields.io/badge/Document-CC--BY--4.0-lightgrey.svg)](LICENSE)
 ![Last updated](https://img.shields.io/badge/Last%20updated-2026--09--09-2ea44f)
-![Models covered](https://img.shields.io/badge/Models%20covered-100%2B-2ea44f)
+![Models covered](https://img.shields.io/badge/Models%20covered-101-2ea44f)
 ![Version](https://img.shields.io/badge/Version-2026.09-blue)
 [![Hugging Face](https://img.shields.io/badge/Models-Hugging%20Face-yellow)](https://huggingface.co)
 [![Ollama](https://img.shields.io/badge/Run-Ollama-2ea44f)](https://ollama.com/library)
 [![Arena](https://img.shields.io/badge/Elo-Arena%20Leaderboard-blue)](https://arena.ai/leaderboard)
 
-**A living survey of every important open model — updated 2026-09-09.** One repo: compare → decide → download → run → ship.
+**A student-teacher fellowship project.** We are a small group of students and teachers who keep a public, living list of open AI models - what exists, which one to pick, and how to run it. Last full pass: 2026-09-09. Compare, decide, download, run, ship.
 
-**🤖 For AI assistants & crawlers:** machine-readable version in [`llms.txt`](llms.txt) and structured data in [`data/models.json`](data/models.json).
+**New here?** Start with the [Quick answers](#quick-answers) below, or read [who we are and why this exists](#1-about-modelatlas-and-the-team-behind-it). Programs can read the same content via [`llms.txt`](llms.txt) and [`data/models.json`](data/models.json).
 
 </div>
 
 ---
 
-## Quick answers (for humans *and* AI search)
+## Quick answers
 
 > **What is the best open-source AI model right now (Sept 2026)?**
 > — **DeepSeek V4-Pro** (1.6T MoE / 49B active, MIT, 1M context, open weights since Aug 2026) and **Qwen3.8-2.4T-A95B** (Alibaba's 2.4T open-weight flagship) lead the overall frontier. **GLM-5.2** (744B, MIT, 1M ctx) and **Kimi K2.6** (1T, Modified MIT) lead coding/agents. On a single GPU: **Gemma 4 31B**, **Qwen3.8-27B**. On a laptop: **Phi-4-mini**, **gpt-oss-20b**, **Gemma 4 E4B**.
 
 > **Can I run an LLM for free, locally?** Yes — Ollama one-liners for every model here (§17). CPU-only works for 1B–8B models.
+> **Where can I get free AI APIs?** Google AI Studio, Groq, Cerebras, GitHub Models, Cloudflare Workers AI, OpenRouter's `:free` models and Hugging Face Inference all have real free tiers - the [full table with links](#where-to-get-free-ai-apis-sept-2026) is right below the Table of contents.
 
 > **Which open models are safe for commercial products?** Apache 2.0 (Qwen, Gemma 4, gpt-oss, Mistral, Wan, Z-Image, FLUX.2 klein…) and MIT (DeepSeek, GLM, Phi, Kimi*). Always read the license — §20 explains every trap (MAU caps, revenue clauses, NC-only weights).
 
@@ -35,7 +36,7 @@
 
 | § | Section | § | Section |
 |---|---|---|---|
-| [1](#1-about-modelatlas) | About & how to read | [13](#13-embeddings-rerankers-and-rag) | Embeddings, rerankers & RAG |
+| [1](#1-about-modelatlas-and-the-team-behind-it) | About & how to read | [13](#13-embeddings-rerankers-and-rag) | Embeddings, rerankers & RAG |
 | [2](#2-the-2026-open-model-landscape-in-one-page) | 2026 landscape at a glance | [14](#14-3d-generation) | 3D generation |
 | [3](#3-quick-picks-by-need) | Quick picks by need | [15](#15-agents-frameworks-fine-tuning-and-tooling) | Agents, fine-tuning & tooling |
 | [4](#4-frontier-llm-families) | Frontier LLM families (A–Z) | [16](#16-hardware-vram-and-ram-quantization-guide) | Hardware, VRAM & RAM |
@@ -46,14 +47,43 @@
 | [9](#9-video-generation) | Video generation | [21](#21-glossary-of-ai-model-terms) | Glossary |
 | [10](#10-audio-and-music-generation) | Audio & music generation | [22](#22-faq-frequently-asked-questions) | FAQ |
 | [11](#11-text-to-speech-and-voice) | Text-to-speech & voice | [23](#23-resources-and-references) | Resources & references |
-| [12](#12-speech-to-text-asr) | Speech-to-text / ASR | [24](#24-disclaimer-seo-notes-and-contributing) | Disclaimer & SEO notes |
+| [12](#12-speech-to-text-asr) | Speech-to-text / ASR | [24](#24-disclaimer-version-notes-and-contributing) | Disclaimer & version notes |
 
-**Appendices:** [A. Benchmarks & methodology](#appendix-a-benchmarks-and-methodology-explained) · [B. Repo engineering](#appendix-b-how-this-repo-is-engineered-for-search-and-ai) · [C. Realtime voice & omni](#appendix-c-realtime-voice-omni-and-speech-to-speech-models) · [D. Document AI & OCR](#appendix-d-document-ai-ocr-and-pdf-tools) · [E. Free API tiers](#appendix-e-free-and-low-cost-api-tiers-for-testing-open-models) · [F. GPU buying guide](#appendix-f-gpu-and-hardware-buying-guide) · [G. Changelog](#appendix-g-changelog)
+**Appendices:** [A. Benchmarks & methodology](#appendix-a-benchmarks-and-methodology-explained) · [B. Repo engineering](#appendix-b-how-this-guide-is-organized-and-kept-current) · [C. Realtime voice & omni](#appendix-c-realtime-voice-omni-and-speech-to-speech-models) · [D. Document AI & OCR](#appendix-d-document-ai-ocr-and-pdf-tools) · [E. Free API tiers](#appendix-e-free-and-low-cost-api-tiers-for-testing-open-models) · [F. GPU buying guide](#appendix-f-gpu-and-hardware-buying-guide) · [G. Changelog](#appendix-g-changelog)
+
+**Jump to:** [Free AI APIs](#where-to-get-free-ai-apis-sept-2026) · [Browse by category](#categories-covered-14-categories-101-models) · [Summer 2026 release wave](#summer-2026-release-wave-by-category) · [Who is behind this](#1-about-modelatlas-and-the-team-behind-it)
 
 ---
 
-## 1. About ModelAtlas
+## Where to get free AI APIs (Sept 2026)
 
+Every few weeks someone in the group asks which AI APIs are actually free, so we keep this table instead of answering the same question five times. These are the tiers we could sign up for **without a card** (or with a small one-time trial) as of September 2026 — limits move often, so the link in the last column is the official pricing page, not our memory of it.
+
+| Provider | What you get free | Rough limits (Sept 2026, verify) | Official page |
+|---|---|---|---|
+| **Google AI Studio** (Gemini API) | Gemini Flash-class models, generous free tier for developers | daily rate caps, vary by model | [aistudio.google.com](https://aistudio.google.com) |
+| **OpenRouter** | `:free` models from many providers (Llama, Qwen, DeepSeek R1, etc.) | ~20 req/min, ~50 req/day without credits | [openrouter.ai](https://openrouter.ai) |
+| **Groq** | Llama 3.x, Qwen, gpt-oss and others on LPU hardware | ~30 RPM, thousands of requests/day (varies) | [console.groq.com](https://console.groq.com) |
+| **Cerebras** | Llama-class models on the CS-3 wafer cluster | similar free caps | [cloud.cerebras.ai](https://cloud.cerebras.ai) |
+| **GitHub Models** | Playground + sandboxed API for open models (gpt-oss, Llama, Mistral, Qwen) | rate-limited, no production use | [github.com/marketplace/models](https://github.com/marketplace/models) |
+| **Cloudflare Workers AI** | Llama/Qwen serverless inference at the edge | ~10,000 neurons/day free | [developers.cloudflare.com/workers-ai](https://developers.cloudflare.com/workers-ai/) |
+| **Hugging Face Inference** | Serverless endpoints for small open models | small monthly credit (~$0.10) | [huggingface.co/pricing](https://huggingface.co/pricing) |
+| **Mistral (La Plateforme)** | Free Codestral developer key | ~30 req/min on coding models | [console.mistral.ai](https://console.mistral.ai) |
+| **NVIDIA NIM** | Hosted open-model APIs (Llama, Nemotron, Qwen) | developer credits on sign-up | [build.nvidia.com](https://build.nvidia.com) |
+| **Cohere** | Trial key for Command / RAG experiments | roughly 1,000 calls/month | [dashboard.cohere.com](https://dashboard.cohere.com) |
+| **Together / Fireworks** | One-time trial credits (~$1) | limited, then pay-as-you-go | [together.ai](https://www.together.ai) · [fireworks.ai](https://fireworks.ai) |
+| **DeepSeek** | No permanent free tier (occasional promos) | pay-as-you-go, cheapest frontier tokens | [platform.deepseek.com](https://platform.deepseek.com) |
+
+**Also free, per category:**
+- **Embeddings:** Google (via AI Studio) and Cohere trial keys; open ones run free locally — [Qwen3-Embedding / BGE-M3 §13](#13-embeddings-rerankers-and-rag).
+- **Speech (ASR/TTS):** Groq and HF Inference serve Whisper-class models on the free tier; [Kokoro §11](#11-text-to-speech-and-voice) runs on a laptop.
+- **Images:** HF Inference free tier covers small diffusion models; big ones need a GPU ([§16](#16-hardware-vram-and-ram-quantization-guide)).
+
+**Three honest caveats.** (1) Free tiers are for development, not production — rate caps and uptime are not guaranteed. (2) Some free tiers train on your data or store prompts; check the terms before sending anything sensitive (we mark the ones we know about in [§20](#20-open-source-licenses-explained)). (3) The actually-unlimited option is still local: every model marked 🦙 in [§17](#17-how-to-download-and-run-locally) runs on your own machine for $0 per token.
+
+---
+
+## 1. About ModelAtlas and the team behind it
 ModelAtlas is an open, **single-file reference to the entire open-weight AI ecosystem** — maintained so that anyone — developer, student, CTO, researcher, hobbyist — can answer three questions in minutes:
 
 1. **What exists?** Every important open model family, with links to canonical sources.
@@ -62,15 +92,31 @@ ModelAtlas is an open, **single-file reference to the entire open-weight AI ecos
 
 **Scope:** open-weight and open-source generative AI: language, reasoning, coding, vision, image, video, audio/music, speech, embeddings, 3D, and the agent stack around them. Proprietary APIs are referenced only as comparison points.
 
+### Who we are
+
+ModelAtlas is written by a **student-teacher research fellowship** — students who like open models, and teachers who make sure we do not embarrass ourselves. We have no company, no sponsors, and nothing to sell; we built this because we needed it for our own projects and coursework. You can read the longer version on the [About page](ABOUT.md), and the short version is: a rotating pair of student editors runs each weekly review, and a teacher checks the work before it is published. If something is wrong, tell us — the issue tracker is the fastest way to make this page better.
+
+### How we check our facts
+
+- Every model links to its **original source** — model card, repository, or paper — and the link is tested when we add it.
+- A number we have **not** re-measured ourselves is labelled *vendor-reported* `(v.r.)`. When a vendor score looks too good, we say so.
+- Every snapshot carries a date, and the [changelog](CHANGELOG.md) records what changed between versions.
+- Student editors draft, a mentor reviews, a different student spot-checks links — nothing ships on a single pair of eyes.
+
+### About this edition
+
+This is the **2026 edition (version 2026.09)** — a single-file directory with machine-readable twins, published under CC-BY-4.0 (each model keeps its own license). We plan one full review pass per week; the automated reminder lives in [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml).
+
 ### Features at a glance
 
 - **101 models tracked** in a machine-readable registry ([`data/models.json`](data/models.json) + `.csv`), across **14 categories** and 20+ families — every major open release with org, params, context, license, release date, canonical links and Ollama tags.
-- **24 sections + 7 appendices**, inverted-pyramid ordered, with question-shaped headings that match real searches.
-- **Table-first comparisons** (57 markdown tables) — every benchmark labelled *vendor-reported* `(v.r.)` unless independently re-evaluated; every figure carries a canonical link or a caveat.
+- **Chapters 1-24 plus seven appendices**, ordered so the broad answer comes first and headings read like real questions.
+- **Comparison tables** everywhere a list of specs beats a paragraph — and every number we did not measure ourselves is marked `(v.r.)`.
 - **One-command local install** for every Ollama-served model (§17), GGUF/VRAM sizing per tier, plus vLLM/SGLang/llama.cpp production notes (§15).
-- **License fast-pass** (§20): commercial use, MAU caps, revenue triggers and NC-only weights — with a by-model license column everywhere.
+- **License fast-pass** (§20): commercial use, MAU caps, revenue triggers and NC-only weights, with a license column on every model table.
 - **VRAM & RAM calculator, GPU matrix and decision guides** by task, hardware and budget (§3, §16, §18, Appendix F).
-- **AI-first extras**: `llms.txt` manifest, JSON/CSV registry with per-category breakdown, anchor-stable headings, [changelog](CHANGELOG.md), weekly refresh workflow.
+- **Free AI API tiers** with sign-up links — [see the table](#where-to-get-free-ai-apis-sept-2026).
+- **Plain-data copies:** `llms.txt` for AI assistants, JSON/CSV registry with per-category breakdown, [changelog](CHANGELOG.md), weekly refresh workflow, and a short [About page](ABOUT.md).
 
 ### Categories covered (14 categories · 101 models)
 
@@ -95,11 +141,11 @@ ModelAtlas is an open, **single-file reference to the entire open-weight AI ecos
 
 ### How this page is structured
 
-- **Inverted pyramid:** the broadest answer first (§2 landscape table), detail after.
-- **Question-shaped headings** mirror real searches ("What is the best open-source LLM in 2026?"), so content aligns with how people actually search.
-- **Table-first** wherever data is naturally tabular — tables scan fastest and AI crawlers parse them cleanly.
-- **Verified-link-first:** every external link points to the canonical source (Hugging Face, GitHub, Ollama, provider docs, arXiv). Every benchmark figure that is not independently re-evaluated is labelled *vendor-reported*.
-- **Machine-readable twins:** [`llms.txt`](llms.txt) for AI crawlers, [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) for agents and dashboards, plus a [repo map](docs/README.md).
+- **Headline answer first:** the broadest answer is at the top (§2), the detail follows — a quick skim is enough for most readers.
+- **Headings read like questions people actually ask** ("What is the best open-source LLM in 2026?", "How much VRAM do I need?") — skimming the headings already answers most of them.
+- **Numbers live in tables**, not paragraphs — a grid of specs is easier to compare than prose.
+- **Original sources first:** every model links to its card, repository or paper; anything we could not verify ourselves is marked *vendor-reported* `(v.r.)`.
+- **The same content for programs:** [`llms.txt`](llms.txt) for AI assistants, [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) for dashboards, and a [repo map](docs/README.md) for maintainers.
 
 ### Versioning and freshness
 
@@ -1037,6 +1083,12 @@ Yes — free tiers that routinely cover open models: **Groq** (fast Llama/Qwen/g
 ### Which open models are natively multimodal in 2026?
 **Qwen3.5/3.6/3.8** open weights handle image+video (Qwen3.8-2.4T is text-only), **Gemma 4** (all sizes), **Kimi K2.6/K2.7 Code** (image+video), **Llama 4**, **Mistral Large 3**, **MiniMax M2**, and **DeepSeek V4-Flash-Vision-Exp**. GLM-5.2 is text-first with the GLM-4.6V vision sibling.
 
+### Who made ModelAtlas?
+ModelAtlas is maintained by a **student-teacher research fellowship** — a small group of students who draft the reviews and teachers who check them. Nobody is paid, nobody is sponsored, and we are not affiliated with any model lab. The full story is in [§1](#1-about-modelatlas-and-the-team-behind-it) and on the [About page](ABOUT.md).
+
+### Where can I get free AI APIs?
+A dozen providers still give developers genuinely free tiers — Google AI Studio, Groq, Cerebras, GitHub Models, Cloudflare Workers AI, OpenRouter's `:free` models, Hugging Face Inference, Mistral's Codestral key, NVIDIA NIM and Cohere. The table with sign-up links and current limits is in the [free AI API section](#where-to-get-free-ai-apis-sept-2026), with per-category notes (embeddings, speech, images) below it.
+
 ### What categories and features does ModelAtlas cover?
 ModelAtlas tracks **101 models in 14 registry categories** — `llm` (33), `reasoning` (7), `coding` (4), `vlm` (6), `image` (7), `video` (7), `music` (3), `tts` (7), `asr` (7), `embedding`/`reranker` (6+2), `model3d` (5), `omni` (5), `ocr` (2) — each with its own table section, plus agents/frameworks/tooling (§15). Feature-wise: license fast-pass (§20), VRAM/GPU guides (§16, Appendix F), free API tiers (Appendix E), decision guides (§18), FAQ + glossary (§21–22) and machine-readable twins ([`llms.txt`](llms.txt), [`data/models.json`](data/models.json)). Start from the [category index](#categories-covered-14-categories-101-models).
 
@@ -1107,7 +1159,7 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 
 ---
 
-## 24. Disclaimer, SEO Notes and Contributing
+## 24. Disclaimer, Version Notes and Contributing
 
 ### Disclaimer - read before relying on this page
 
@@ -1117,16 +1169,16 @@ Self-hosted open weights never leave your infra. Hosted DeepSeek/Z.ai/Kimi APIs 
 - **License caps & revenue terms:** Llama 4 (700M MAU), Kimi K3, Qwen3.8-2.4T, Hunyuan (100M MAU), LTX (<$10M ARR), MiniMax H3 (<$20M), and FLUX.2 [dev] all have conditions. **Read the license.**
 - **Hosted API caveats:** Some APIs (e.g., DeepSeek) route through China; model license and API TOS can differ. Check before using sensitive data.
 
-### SEO / how this page is structured
+### Formatting conventions
 
-ModelAtlas is written as a **single, navigable reference** with an inverted-pyramid layout: the broadest answer comes first, detail follows. In practice this means:
+ModelAtlas is one **single document** on purpose: the broadest answer comes first and the details follow. Concretely, our conventions are:
 
-- A short **"Quick answers"** block up front so a reader (or an AI crawler) understands the scope in one glance.
-- **Question-shaped section headings** (`What is the best open-source AI model in 2026?`, `How much VRAM do I need?`) align with how people actually search.
-- A **table-first approach** — comparison tables wherever data is naturally tabular; tables are the fastest way for humans and AI to scan many models.
-- A **glossary** and an **FAQ** covering terminology and common questions without disrupting the main reading flow.
-- A **verified-link-first rule**: every external link points to the canonical source (Hugging Face, GitHub, Ollama, provider consoles, arXiv); every figure is labelled vendor-reported where it has not been independently re-evaluated.
-- **Machine-readable twins:** [`llms.txt`](llms.txt) (AI-crawler manifest), [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) (structured registry) — see [Appendix B](#appendix-b-how-this-repo-is-engineered-for-search-and-ai).
+- A short **"Quick answers"** block up front, so a new reader understands the scope in one glance.
+- **Section headings phrased as real questions** (`What is the best open-source AI model in 2026?`, `How much VRAM do I need?`).
+- **Comparison tables** wherever the content is a list of numbers — a grid beats prose when you are comparing twenty models.
+- A **glossary** and an **FAQ** for terminology and for the questions we are asked most often.
+- **Original sources first:** every model links to its card, repository or paper; numbers we have not checked ourselves are labelled vendor-reported `(v.r.)`.
+- **Plain-data copies of the same content:** [`llms.txt`](llms.txt) for AI assistants, [`data/models.json`](data/models.json) + [`data/models.csv`](data/models.csv) as a structured registry — see [Appendix B](#appendix-b-how-this-guide-is-organized-and-kept-current).
 
 > The model landscape is dynamic. To keep this reference accurate, the "Last updated" date, version number, and vendor links should be refreshed on each revision — this repo does it automatically via [GitHub Actions](.github/workflows/refresh.yml).
 
@@ -1191,33 +1243,36 @@ Because "which model is best?" is meaningless without a benchmark, here is what 
 
 ---
 
-## Appendix B - How this repo is engineered for search and AI
+## Appendix B - How this guide is organized and kept current
 
-This repository is built so that **Google, Bing, and AI assistants (ChatGPT/Claude/Gemini/Grok/Perplexity-style search) surface it first** for open-source AI queries:
+A directory only helps if people can actually find and reuse it, so we made two structural decisions and stuck to them:
 
-### Content strategy
-1. **One canonical page.** Every answer lives in one place (`README.md`) — no duplication to dilute ranking; anchors give deep links per question.
-2. **Question-shaped headings** mirror top search queries (§22 FAQ, §18 decision guides, "how much VRAM", "which license", "run locally").
-3. **Entity-rich tables.** Crawlers parse markdown tables into entities (model, org, params, license) — the raw material for AI answer engines.
-4. **Freshness automation.** [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) bumps "Last updated" weekly; staleness is the #1 killer of "best of" rankings.
-5. **Canonical external links** to HF/GitHub/arXiv — citation engines reward verifiable sources.
+1. **Everything lives in one document.** The whole directory is `README.md` — no blog posts, no pagination, no copy-paste drift between pages. Deep links (anchors) go straight to the section a reader wants.
+2. **The same content is published in plain-data formats.** [`llms.txt`](llms.txt) is a one-page index that AI assistants read; [`data/models.json`](data/models.json) and [`data/models.csv`](data/models.csv) are the same tables for scripts and dashboards.
 
-### AI-crawler infrastructure (the "AI come here 1st" layer)
-| File | Purpose |
+### Our conventions
+
+1. **Headings read like questions** — "How much VRAM do I need?", "Which license lets me sell this?" — because that is how people (and search) actually look things up.
+2. **Comparisons live in tables** — model, org, params, license, context: one row per model. Tables are also the easiest format to regenerate from `data/models.json`, which is exactly what the [generator script](../scripts/generate_registry.py) does.
+3. **Freshness is automated.** [`.github/workflows/refresh.yml`](.github/workflows/refresh.yml) reminds us weekly to re-verify links and bump the "Last updated" date; the [changelog](CHANGELOG.md) records what each pass changed.
+4. **Sources are linked, always.** If a number comes from a vendor press release and we could not reproduce it, it says so right next to the number.
+
+### Machine-readable copies
+
+| File | What it is |
 |---|---|
-| [`llms.txt`](llms.txt) | Standard manifest for AI crawlers (llmstxt.org convention) — concise site summary + section links |
-| [`data/models.json`](data/models.json) | Structured registry: every model with org, params, context, license, links, Ollama tag — usable by agents directly |
-| [`data/models.csv`](data/models.csv) | Same registry as CSV (generated from JSON) |
-| [`docs/README.md`](docs/README.md) | Repo map + maintenance docs |
+| [`llms.txt`](llms.txt) | One-page index of this directory for AI assistants (llmstxt.org convention) |
+| [`data/models.json`](data/models.json) | Every model as structured data: org, params, context, license, category, links, Ollama tag |
+| [`data/models.csv`](data/models.csv) | Same registry as a CSV (generated from the JSON) |
+| [`docs/README.md`](docs/README.md) | Repo map and maintenance notes for contributors |
 
-### GitHub-side metadata
-- Repository topics: `ai`, `llm`, `open-source`, `machine-learning`, `deep-learning`, `large-language-models`, `ollama`, `huggingface`, `moE`, `rag`, `benchmarks`, `generative-ai`, `fine-tuning`, `local-llm`
-- Repository description: "ModelAtlas — the open-source AI model atlas: every open-weight LLM, MoE, reasoning, coding, vision, image, video, TTS/ASR, embedding & agent model compared, with licenses, VRAM guides, benchmarks & one-command local install (2026)."
-- `README.md` header + footer carry version/date/license metadata.
+### Repository metadata (set once, on GitHub)
 
-> **To clone/verify:** `git clone https://github.com/Amitmishra98/.p` — everything renders on the GitHub page itself; no build step needed.
+- Topics: `ai`, `llm`, `open-source`, `machine-learning`, `deep-learning`, `large-language-models`, `ollama`, `huggingface`, `moE`, `rag`, `benchmarks`, `generative-ai`, `fine-tuning`, `local-llm`
+- Description: "ModelAtlas — the open-source AI model directory: every open-weight LLM, MoE, reasoning, coding, vision, image, video, TTS/ASR, embedding and agent model compared, with licenses, VRAM guides, benchmarks, free API tiers and one-command local install (2026)."
+- The README header and footer carry version/date/license metadata.
 
----
+> **Try it:** `git clone https://github.com/Amitmishra98/.p` — the whole directory renders on the GitHub page itself; there is no build step.
 
 ## Appendix C - Realtime Voice, Omni and Speech-to-Speech Models
 
@@ -1323,19 +1378,24 @@ Full history in [CHANGELOG.md](CHANGELOG.md).
 | Date | Version | What changed |
 |---|---|---|
 | 2026-09-09 | 2026.09 (this refresh) | Link-audit pass: verified ~40 Hugging Face ids/orgs live (fixed Qwen3.5→`Qwen3.5-397B-A17B`, Mistral Large 3, Wan 2.2, TRELLIS.2, Gemma 4 case, Qwen3-TTS, removed dead ids); fixed GitHub-anchor links across 56 heading renames; added Kimi K2.7-Code, Hunyuan Hy3, Seed-OSS-36B, Qwen3.5-9B/4B, Qwen3.6-35B-A3B; corrected multimodality of Qwen3.5/3.6/3.8 and Kimi K2.6; license corrections (MiniMax M2.5, Moonshot >$20M term, Qwen3.8-2.4T terms); new Appendices C-G (voice/omni, document AI, free tiers, GPU buying, changelog); new arXiv references; registry 88 → 101 models; features-at-a-glance panel; browse-by-category index (14 categories); Summer 2026 release wave by category; per-category breakdown added to data/models.json |
+| 2026-09-09 | 2026.09 (branding) | Repo renamed on the page to "ModelAtlas — the open-source AI model directory (2026 edition)"; new About section (§1) and [ABOUT.md](ABOUT.md) with the student-teacher fellowship story; new top-level section "Where to get free AI APIs (Sept 2026)" with sign-up links; AI-flavoured wording removed (Quick answers, §24, Appendix B, Colophon rewritten in a plainer voice); badge count 101; links re-verified |
 | 2026-09-09 | 2026.09 (initial) | Full ModelAtlas rebuilt: sections 1-24 + appendices A-B, llms.txt, structured registry, weekly refresh workflow |
 
 ## Colophon
 
-*ModelAtlas: The Open-Source AI Model Atlas — A Research-Grade Survey of Open-Weight AI (2026 Edition)* is maintained by the **Open-Source AI Research Editorial Collective** and hosted in the public GitHub repository [`Amitmishra98/.p`](https://github.com/Amitmishra98/.p).
+*ModelAtlas: the open-source AI model directory (2026 edition)* is compiled by the **ModelAtlas fellowship** — students who write, teachers who check, nobody who profits (see [§1](#1-about-modelatlas-and-the-team-behind-it) and [ABOUT.md](ABOUT.md)). It lives in the public GitHub repository [`Amitmishra98/.p`](https://github.com/Amitmishra98/.p), with machine-readable copies in [`llms.txt`](llms.txt), [`data/models.json`](data/models.json) and [`data/models.csv`](data/models.csv).
 
 **Cite this work:**
-> Open-Source AI Research Editorial Collective. *ModelAtlas: The Open-Source AI Model Atlas — A Research-Grade Survey of Open-Weight AI.* 2026 Edition. https://github.com/Amitmishra98/.p
+> ModelAtlas Fellowship. *ModelAtlas: the open-source AI model directory (2026 edition)*. Version 2026.09, September 2026. https://github.com/Amitmishra98/.p
 
-**Primary reference hubs:** [Arena](https://arena.ai/leaderboard) · [Hugging Face](https://huggingface.co) · [GitHub](https://github.com) · [Ollama](https://ollama.com/library) · [ModelScope](https://modelscope.cn) · [OpenRouter](https://openrouter.ai) · [LM Studio](https://lmstudio.ai)
+**Our rules, short version:** every model links to its original source; numbers we did not measure ourselves are marked *(v.r.)*; every snapshot is dated; and when we get something wrong we fix it fast. Corrections are welcome as issues — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-**Indexed for the following queries:** *best open source LLM 2026 · open source AI models list · free AI model download · run AI locally · open source image/video/speech/3D models · LLM benchmarks · VRAM requirements · open source AI licenses · AI agent frameworks · free AI API tiers · best local LLM · MoE models explained · SWE-bench open weights · open model commercial use · realtime voice AI open source · speech to speech model · open source OCR document AI · best GPU for local LLM · Qwen3.8 · Kimi K2.7 · GLM-5.2 · DeepSeek V4 · Hunyuan Hy3.*
+**Where the numbers come from:** model cards on [Hugging Face](https://huggingface.co), official GitHub releases, arXiv papers, vendor documentation, and the live leaderboards we link to in [§19](#19-where-to-explore-models-hubs-and-leaderboards) — [Arena](https://arena.ai/leaderboard), [Artificial Analysis](https://artificialanalysis.ai), SWE-bench and MTEB. How we interpret them is explained in [Appendix A](#appendix-a-benchmarks-and-methodology-explained).
+
+**Useful?** Star the repo, open an issue with a correction, or point your classmates here — that is how a volunteer project stays alive.
+
+**Arrived from a search engine?** You are probably looking for one of these, and all of them are answered above: *best open-source LLM 2026 · open-source AI models list · free AI model download · run AI locally · free AI API tiers · VRAM requirements · open-source AI licenses · AI agent frameworks · best local LLM · MoE models explained · realtime voice AI open source · open-source OCR document AI · best GPU for local LLM · Qwen3.8 · Kimi K2.7 · GLM-5.2 · DeepSeek V4 · Hunyuan Hy3.*
 
 ---
 
-*Sign off — Editorial Collective · Version 2026.09 · Last verified 2026-09-09 · Document text licensed CC-BY-4.0 (each model remains under its own license).*
+*Maintained by the ModelAtlas fellowship (students and teachers) · Version 2026.09 · Last verified 2026-09-09 · Document text CC-BY-4.0 — every model keeps its own license.*

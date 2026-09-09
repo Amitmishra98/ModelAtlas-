@@ -39,6 +39,15 @@ All notable changes to this repository (README + registry + tooling). Format bas
 - `llms.txt` gained a "Categories" block (14 tags → section anchors).
 - New FAQ entry: "What categories and features does ModelAtlas cover?"
 
+## [2026.09 (branding & about)] — 2026-09-09
+
+- H1/subtitle rebranded: "ModelAtlas — the open-source AI model directory (2026 edition)".
+- **About**: new "Who we are" + "How we check our facts" subsections in §1; new standalone `ABOUT.md` (fellowship story, working method, non-affiliation, contact). Author line changed from "Editorial Collective" to the ModelAtlas fellowship (students & teachers).
+- **Where to get free AI APIs (Sept 2026)**: new top-level section — 12 providers with free tiers, rough limits, official sign-up links, per-category notes (embeddings, speech, images) and honest caveats; also linked from the Quick answers block, the FAQ and llms.txt.
+- Humanization pass: "SEO" framing removed from §24 and Appendix B ("engineered for search"/"crawlers parse" language gone); Colophon rewritten in a plain voice with citation, rules, and a search-arrival note; header "for AI assistants & crawlers" line replaced with a reader-facing pointer.
+- Badge count corrected to 101; models badge no longer claims 100+.
+- Internal anchors re-verified after heading renames (Quick answers, §1, §24, Appendix B); llms.txt section list synced; zero dead anchors.
+
 ## [2026.09 (initial)] — 2026-09-09
 
 - Full ModelAtlas rebuilt: sections 1–24 + Appendices A–B (benchmarks methodology, repo engineering for search/AI), llms.txt manifest, structured JSON/CSV registry, weekly refresh workflow, LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, repo map (`docs/README.md`).

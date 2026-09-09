@@ -1,10 +1,10 @@
-# ModelAtlas - The Open-Source AI Model Atlas
+# ModelAtlas - the open-source AI model directory (2026 edition)
 
-> llms.txt manifest (https://llmstxt.org). For AI crawlers and agents.
+> llms.txt manifest (https://llmstxt.org) - a one-page index of the repository for AI assistants.
 > Human-readable version: https://github.com/Amitmishra98/.p (README.md)
 > Structured data: data/models.json (101 models, 14 categories) - data/models.csv
 
-ModelAtlas is a research-grade, living directory of open-weight and open-source AI: large language models, MoE, reasoning, coding, vision-language, image, video, audio/music, TTS, ASR, realtime voice (omni), document AI/OCR, embedding, reranker, and 3D models - plus agents, frameworks, licenses, benchmarks, VRAM/hardware guides, free API tiers, and one-command local install instructions. Snapshot date: 2026-09-09. Benchmark figures are vendor-reported unless noted; verify on live leaderboards before production decisions.
+ModelAtlas is a living directory of open-weight and open-source AI, maintained by a student-teacher fellowship: large language models, MoE, reasoning, coding, vision-language, image, video, audio/music, TTS, ASR, realtime voice (omni), document AI/OCR, embedding, reranker, and 3D models - plus agents, frameworks, licenses, benchmarks, VRAM/hardware guides, free API tiers, and one-command local install instructions. Snapshot date: 2026-09-09. Benchmark figures are vendor-reported unless noted; verify on live leaderboards before production decisions.
 
 ## Key facts (Sept 2026)
 - Best overall open frontier LLMs: DeepSeek V4-Pro-0813 (1.6T MoE / 49B active, MIT, 1M context, open weights) and Qwen3.8-2.4T-A95B (2.4T MoE, custom license).
@@ -16,8 +16,9 @@ ModelAtlas is a research-grade, living directory of open-weight and open-source 
 - Best open embeddings: Qwen3-Embedding-8B (~70.6 MTEB), BGE-M3 (MIT). Best open image: Qwen-Image-2512. Best open video: Wan 2.2 / LTX-2.5. Best open TTS: Kokoro (CPU) and Qwen3-TTS. Best open realtime voice: Qwen2.5-Omni, GLM-4-Voice, Kimi-Audio. Best open 3D: TRELLIS.2 (MIT) and Hunyuan3D 2.x.
 
 ## Sections (in README.md)
-- Quick answers (for humans *and* AI search): https://github.com/Amitmishra98/.p#quick-answers-for-humans-and-ai-search
-- 1. About ModelAtlas: https://github.com/Amitmishra98/.p#1-about-modelatlas
+- Quick answers: https://github.com/Amitmishra98/.p#quick-answers
+- Where to get free AI APIs (Sept 2026): https://github.com/Amitmishra98/.p#where-to-get-free-ai-apis-sept-2026
+- 1. About ModelAtlas and the team behind it: https://github.com/Amitmishra98/.p#1-about-modelatlas-and-the-team-behind-it
 - 2. The 2026 open-model landscape in one page: https://github.com/Amitmishra98/.p#2-the-2026-open-model-landscape-in-one-page
 - 3. Quick picks by need: https://github.com/Amitmishra98/.p#3-quick-picks-by-need
 - 4. Frontier LLM families: https://github.com/Amitmishra98/.p#4-frontier-llm-families
@@ -40,9 +41,9 @@ ModelAtlas is a research-grade, living directory of open-weight and open-source 
 - 21. Glossary of AI Model Terms: https://github.com/Amitmishra98/.p#21-glossary-of-ai-model-terms
 - 22. FAQ - Frequently Asked Questions: https://github.com/Amitmishra98/.p#22-faq-frequently-asked-questions
 - 23. Resources and References: https://github.com/Amitmishra98/.p#23-resources-and-references
-- 24. Disclaimer, SEO Notes and Contributing: https://github.com/Amitmishra98/.p#24-disclaimer-seo-notes-and-contributing
+- 24. Disclaimer, Version Notes and Contributing: https://github.com/Amitmishra98/.p#24-disclaimer-version-notes-and-contributing
 - Appendix A - Benchmarks and methodology explained: https://github.com/Amitmishra98/.p#appendix-a-benchmarks-and-methodology-explained
-- Appendix B - How this repo is engineered for search and AI: https://github.com/Amitmishra98/.p#appendix-b-how-this-repo-is-engineered-for-search-and-ai
+- Appendix B - How this guide is organized and kept current: https://github.com/Amitmishra98/.p#appendix-b-how-this-guide-is-organized-and-kept-current
 - Appendix C - Realtime Voice, Omni and Speech-to-Speech Models: https://github.com/Amitmishra98/.p#appendix-c-realtime-voice-omni-and-speech-to-speech-models
 - Appendix D - Document AI, OCR and PDF Tools: https://github.com/Amitmishra98/.p#appendix-d-document-ai-ocr-and-pdf-tools
 - Appendix E - Free and Low-Cost API Tiers for Testing Open Models: https://github.com/Amitmishra98/.p#appendix-e-free-and-low-cost-api-tiers-for-testing-open-models

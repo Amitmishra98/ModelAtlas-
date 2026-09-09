@@ -6,6 +6,7 @@
 ├── llms.txt                       ← AI-crawler manifest (llmstxt.org convention)
 ├── LICENSE                        ← CC BY 4.0 (docs) + MIT (scripts); models keep own licenses
 ├── SECURITY.md
+├── ABOUT.md                         ← who we are, how we work (human story)
 ├── CONTRIBUTING.md
 ├── CHANGELOG.md                    ← versioned change history (audit trail)
 ├── CODE_OF_CONDUCT.md
