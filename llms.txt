@@ -49,6 +49,23 @@ ModelAtlas is a research-grade, living directory of open-weight and open-source 
 - Appendix F - GPU and Hardware Buying Guide: https://github.com/Amitmishra98/.p#appendix-f-gpu-and-hardware-buying-guide
 - Appendix G - Changelog: https://github.com/Amitmishra98/.p#appendix-g-changelog
 
+## Categories (14 registry tags · 101 models)
+
+- Frontier LLMs (dense + MoE) (33 models, tag `llm`): https://github.com/Amitmishra98/.p#4-frontier-llm-families
+- Reasoning models (7 models, tag `reasoning`): https://github.com/Amitmishra98/.p#5-reasoning-models
+- Coding and agentic models (4 models, tag `coding`): https://github.com/Amitmishra98/.p#6-coding-and-agentic-models
+- Vision-language models (6 models, tag `vlm`): https://github.com/Amitmishra98/.p#7-vision-language-models
+- Image generation (7 models, tag `image`): https://github.com/Amitmishra98/.p#8-image-generation
+- Video generation (7 models, tag `video`): https://github.com/Amitmishra98/.p#9-video-generation
+- Music and audio generation (3 models, tag `music`): https://github.com/Amitmishra98/.p#10-audio-and-music-generation
+- Text-to-speech and voice (7 models, tag `tts`): https://github.com/Amitmishra98/.p#11-text-to-speech-and-voice
+- Speech-to-text / ASR (7 models, tag `asr`): https://github.com/Amitmishra98/.p#12-speech-to-text-asr
+- Embeddings, rerankers and RAG (8 models, tag `embedding+reranker`): https://github.com/Amitmishra98/.p#13-embeddings-rerankers-and-rag
+- 3D generation (5 models, tag `model3d`): https://github.com/Amitmishra98/.p#14-3d-generation
+- Realtime voice / omni (speech-to-speech) (5 models, tag `omni`): https://github.com/Amitmishra98/.p#appendix-c-realtime-voice-omni-and-speech-to-speech-models
+- Document AI and OCR (2 models, tag `ocr`): https://github.com/Amitmishra98/.p#appendix-d-document-ai-ocr-and-pdf-tools
+- Agents, frameworks and tooling (- models, tag `-`): https://github.com/Amitmishra98/.p#15-agents-frameworks-fine-tuning-and-tooling
+
 ## Canonical external resources
 - Arena leaderboard: https://arena.ai/leaderboard
 - Hugging Face: https://huggingface.co

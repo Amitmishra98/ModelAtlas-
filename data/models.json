@@ -2,6 +2,23 @@
   "generated": "2026-09-09",
   "source": "ModelAtlas README.md §2/§4",
   "count": 101,
+  "category_count": 14,
+  "categories": {
+    "asr": 7,
+    "coding": 4,
+    "embedding": 6,
+    "image": 7,
+    "llm": 33,
+    "model3d": 5,
+    "music": 3,
+    "ocr": 2,
+    "omni": 5,
+    "reasoning": 7,
+    "reranker": 2,
+    "tts": 7,
+    "video": 7,
+    "vlm": 6
+  },
   "models": [
     {
       "id": "deepseek-v4-pro-0813",

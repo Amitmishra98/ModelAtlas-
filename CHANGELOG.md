@@ -30,6 +30,15 @@ All notable changes to this repository (README + registry + tooling). Format bas
 - `data/models.json`/`.csv` + `llms.txt` regenerated for 101 models / 14 categories.
 - New standalone `CHANGELOG.md` (this file).
 
+## [2026.09 (refresh 2 — categories & features)] — 2026-09-09
+
+- **Features at a glance** panel added to §1 (101 models, 14 categories, registry twins, license fast-pass, VRAM guides, AI-first extras).
+- **Browse-by-category index** table added to §1: every registry category with model count, `category` tag, deep-dive link and what's inside (counts match `data/models.json`).
+- **Summer 2026 release wave, by category** subsection added to §2 (GLM-5.2, Kimi K2.7-Code, Hunyuan Hy3, DeepSeek V4 family, Qwen3.8 family, LTX-2.5, MiniCPM5, OCR/TTS status) + HF state-of-open-models context line.
+- `data/models.json` now emits `category_count` + `categories` breakdown (14 tags) for agents.
+- `llms.txt` gained a "Categories" block (14 tags → section anchors).
+- New FAQ entry: "What categories and features does ModelAtlas cover?"
+
 ## [2026.09 (initial)] — 2026-09-09
 
 - Full ModelAtlas rebuilt: sections 1–24 + Appendices A–B (benchmarks methodology, repo engineering for search/AI), llms.txt manifest, structured JSON/CSV registry, weekly refresh workflow, LICENSE, CONTRIBUTING, SECURITY, CODE_OF_CONDUCT, repo map (`docs/README.md`).

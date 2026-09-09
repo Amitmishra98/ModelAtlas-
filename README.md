@@ -62,6 +62,37 @@ ModelAtlas is an open, **single-file reference to the entire open-weight AI ecos
 
 **Scope:** open-weight and open-source generative AI: language, reasoning, coding, vision, image, video, audio/music, speech, embeddings, 3D, and the agent stack around them. Proprietary APIs are referenced only as comparison points.
 
+### Features at a glance
+
+- **101 models tracked** in a machine-readable registry ([`data/models.json`](data/models.json) + `.csv`), across **14 categories** and 20+ families — every major open release with org, params, context, license, release date, canonical links and Ollama tags.
+- **24 sections + 7 appendices**, inverted-pyramid ordered, with question-shaped headings that match real searches.
+- **Table-first comparisons** (57 markdown tables) — every benchmark labelled *vendor-reported* `(v.r.)` unless independently re-evaluated; every figure carries a canonical link or a caveat.
+- **One-command local install** for every Ollama-served model (§17), GGUF/VRAM sizing per tier, plus vLLM/SGLang/llama.cpp production notes (§15).
+- **License fast-pass** (§20): commercial use, MAU caps, revenue triggers and NC-only weights — with a by-model license column everywhere.
+- **VRAM & RAM calculator, GPU matrix and decision guides** by task, hardware and budget (§3, §16, §18, Appendix F).
+- **AI-first extras**: `llms.txt` manifest, JSON/CSV registry with per-category breakdown, anchor-stable headings, [changelog](CHANGELOG.md), weekly refresh workflow.
+
+### Categories covered (14 categories · 101 models)
+
+| Category | Models | Registry tag | Deep dive | What's inside |
+|---|--:|---|---|---|
+| Frontier LLMs (dense + MoE) | 33 | `llm` | [§4](#4-frontier-llm-families) | DeepSeek V4 family, Qwen3.5/3.6/3.8, GLM-5.2/4.7, Kimi K2.6/K2.7, Llama 4, Mistral Large 3, Gemma 4, gpt-oss, MiniMax M2.5, Hunyuan Hy3, MiMo-V2, Seed-OSS, Phi-4, Granite, OLMo, SmolLM, Falcon, Sarvam, MiniCPM5 |
+| Reasoning models | 7 | `reasoning` | [§5](#5-reasoning-models) | DeepSeek-R1 + distills, gpt-oss-120b/20b, Phi-4-Reasoning, Magistral Small, Seed-OSS-36B |
+| Coding & agentic models | 4 | `coding` | [§6](#6-coding-and-agentic-models) | Kimi K2.7-Code, Qwen3-Coder family, Devstral Small 2, GLM-4.7 |
+| Vision-language models | 6 | `vlm` | [§7](#7-vision-language-models) | Qwen3-VL / 2.5-VL, DeepSeek V4-Flash-Vision, MiniMax M2, UI-TARS, InternVL3, Llama 4 |
+| Image generation | 7 | `image` | [§8](#8-image-generation) | Qwen-Image-2512, FLUX.2 [dev/klein], Z-Image-Turbo, GLM-Image, SD 3.5, HunyuanImage |
+| Video generation | 7 | `video` | [§9](#9-video-generation) | Wan 2.2/2.5, LTX-2.5, MiniMax H3 (Hailuo 3.0), HunyuanVideo 1.5, CogVideoX, Mochi, Open-Sora |
+| Music & audio generation | 3 | `music` | [§10](#10-audio-and-music-generation) | MusicGen, Stable Audio Open, ACE-Step 1.5 |
+| Text-to-speech & voice | 7 | `tts` | [§11](#11-text-to-speech-and-voice) | Qwen3-TTS, Kokoro, Chatterbox, CosyVoice 3, F5-TTS, Piper, VibeVoice |
+| Speech-to-text / ASR | 7 | `asr` | [§12](#12-speech-to-text-asr) | Whisper large-v3/turbo, Qwen3-ASR, Parakeet, Canary, Moonshine, Vosk, WhisperX |
+| Embeddings, rerankers & RAG | 8 | `embedding` + `reranker` | [§13](#13-embeddings-rerankers-and-rag) | Qwen3-Embedding, BGE-M3, NV-Embed, nomic, gte-Qwen3, mxbai, rerankers (BGE, Qwen3) |
+| 3D generation | 5 | `model3d` | [§14](#14-3d-generation) | Hunyuan3D 2.x, TRELLIS.2, TripoSR, Stable Fast 3D, SAM 3D |
+| Realtime voice / omni (speech-to-speech) | 5 | `omni` | [Appendix C](#appendix-c-realtime-voice-omni-and-speech-to-speech-models) | Qwen2.5-Omni, GLM-4-Voice, Kimi-Audio, Step-Audio, MiniCPM-o |
+| Document AI & OCR | 2 | `ocr` | [Appendix D](#appendix-d-document-ai-ocr-and-pdf-tools) | olmOCR, GOT-OCR2 (tools: MinerU, Marker, Surya, ColPali…) |
+| Agents, frameworks & tooling | — | — | [§15](#15-agents-frameworks-fine-tuning-and-tooling) | MCP, OpenHands, LangGraph, vLLM/SGLang/llama.cpp serving stack |
+
+> Counts auto-generated from `data/models.json` (registry 101 models); the 14 registry tags are `llm, reasoning, coding, vlm, image, video, music, tts, asr, embedding, reranker, model3d, omni, ocr`.
+
 ### How this page is structured
 
 - **Inverted pyramid:** the broadest answer first (§2 landscape table), detail after.
@@ -130,6 +161,27 @@ Rankings below are **vendor-reported + public leaderboard snapshots** (Arena Elo
 | 2026-08-31 | DeepSeek V4-Flash-Vision-Exp weights (305B multimodal MoE, MIT) |
 
 > ℹ️ **Missing from many lists:** Google's Gemma 4 went **Apache 2.0** (a big license step up from Gemma 3), and OpenAI's **gpt-oss** family remains its only open line (no "gpt-oss-2" as of this snapshot).
+
+### Summer 2026 release wave, by category
+
+What actually shipped open-weight between June and August 2026, grouped by category (deep dives in the linked sections). Dates verified against release notes; scores are `(v.r.)`.
+
+| Category | Release | Date | License | Why it matters |
+|---|---|---|---|---|
+| **Frontier LLM / MoE** | **GLM-5.2** (744B, 1M ctx) | Jun 13 | MIT | Coding/agent frontier open within a week of preview; 282-shard release |
+| **Frontier LLM / MoE** | **Kimi K2.7-Code** (1T/32B) | Jun 12 | Modified MIT | Coding specialist: +21.8% Kimi Code Bench v2, −30% reasoning tokens (v.r.) |
+| **Frontier LLM / MoE** | **Hunyuan Hy3** (295B/21B) | Jul 6 | Apache 2.0 | Tencent's open reasoning/agent MoE with `reasoning_effort` control |
+| **Frontier LLM / MoE** | **DeepSeek V4-Flash** | Jul 31 | MIT | Fast/cheap tier of the V4 family open-weighted |
+| **Frontier LLM / MoE** | **Qwen3.8-Max** family: **27B** (Aug 3) + **2.4T-A95B** (Aug 8) | Aug | Apache (27B) / custom (2.4T) | Alibaba's largest-ever open release |
+| **Frontier LLM / MoE** | **DeepSeek V4-Pro-0813** (1.6T/49B act.) | Aug 13 | MIT | GA refresh + open weights, 1M ctx |
+| **Vision-language** | **DeepSeek V4-Flash-Vision-Exp** (305B MoE) | Aug 31 | MIT | Open multimodal sibling of V4-Flash |
+| **Video + audio** | **LTX-2.5** (22B) | Jul 23 | LTX Community | 4K/20s generation with native audio in one DiT |
+| **Image generation** | — | — | — | Quiet quarter: Qwen-Image-2512 and FLUX.2 [klein] stayed the open picks (v.r.) |
+| **TTS / voice** | — | — | — | Ecosystem matured around Qwen3-TTS / Kokoro / Chatterbox; no new top-tier release (v.r.) |
+| **Edge / on-device** | **MiniCPM5-1B** (May 21) and **MiniCPM5-2B** (Sep 6) | May–Sep | Apache 2.0 | OpenBMB edge family now 1B–2B with tool calling |
+| **Document AI / OCR** | incremental | Jun–Aug | — | olmOCR/MinerU pipelines kept pace (v.r.); no frontier-scale drop |
+
+**Ecosystem context (Aug 14, 2026, HF State-of-Open-Models report):** 178 open releases above 20B params came from Chinese labs in 2026 so far — 59% Apache-2.0, 22% MIT — while a new wave of license restrictions appeared on the largest releases (Kimi K3 terms, Qwen3.8-2.4T revenue share). Details in [§20](#20-open-source-licenses-explained) and the [full changelog](CHANGELOG.md).
 
 ---
 
@@ -985,6 +1037,9 @@ Yes — free tiers that routinely cover open models: **Groq** (fast Llama/Qwen/g
 ### Which open models are natively multimodal in 2026?
 **Qwen3.5/3.6/3.8** open weights handle image+video (Qwen3.8-2.4T is text-only), **Gemma 4** (all sizes), **Kimi K2.6/K2.7 Code** (image+video), **Llama 4**, **Mistral Large 3**, **MiniMax M2**, and **DeepSeek V4-Flash-Vision-Exp**. GLM-5.2 is text-first with the GLM-4.6V vision sibling.
 
+### What categories and features does ModelAtlas cover?
+ModelAtlas tracks **101 models in 14 registry categories** — `llm` (33), `reasoning` (7), `coding` (4), `vlm` (6), `image` (7), `video` (7), `music` (3), `tts` (7), `asr` (7), `embedding`/`reranker` (6+2), `model3d` (5), `omni` (5), `ocr` (2) — each with its own table section, plus agents/frameworks/tooling (§15). Feature-wise: license fast-pass (§20), VRAM/GPU guides (§16, Appendix F), free API tiers (Appendix E), decision guides (§18), FAQ + glossary (§21–22) and machine-readable twins ([`llms.txt`](llms.txt), [`data/models.json`](data/models.json)). Start from the [category index](#categories-covered-14-categories-101-models).
+
 ### What changed in open-source AI this summer (2026)?
 GLM-5.2 (Jun 13), Kimi K2.7-Code (Jun 12), Hunyuan Hy3 under Apache 2.0 (Jul 6), LTX-2.5 video+audio (Jul 23), DeepSeek V4-Flash weights (Jul 31) and V4-Pro GA+weights (Aug 13), Qwen3.8 generation (Aug), Gemma 4 staying hot (10M+ first-week downloads). Full log: [CHANGELOG.md](CHANGELOG.md).
 
@@ -1267,7 +1322,7 @@ Full history in [CHANGELOG.md](CHANGELOG.md).
 
 | Date | Version | What changed |
 |---|---|---|
-| 2026-09-09 | 2026.09 (this refresh) | Link-audit pass: verified ~40 Hugging Face ids/orgs live (fixed Qwen3.5→`Qwen3.5-397B-A17B`, Mistral Large 3, Wan 2.2, TRELLIS.2, Gemma 4 case, Qwen3-TTS, removed dead ids); fixed GitHub-anchor links across 56 heading renames; added Kimi K2.7-Code, Hunyuan Hy3, Seed-OSS-36B, Qwen3.5-9B/4B, Qwen3.6-35B-A3B; corrected multimodality of Qwen3.5/3.6/3.8 and Kimi K2.6; license corrections (MiniMax M2.5, Moonshot >$20M term, Qwen3.8-2.4T terms); new Appendices C-G (voice/omni, document AI, free tiers, GPU buying, changelog); new arXiv references; registry 88 → 101 models |
+| 2026-09-09 | 2026.09 (this refresh) | Link-audit pass: verified ~40 Hugging Face ids/orgs live (fixed Qwen3.5→`Qwen3.5-397B-A17B`, Mistral Large 3, Wan 2.2, TRELLIS.2, Gemma 4 case, Qwen3-TTS, removed dead ids); fixed GitHub-anchor links across 56 heading renames; added Kimi K2.7-Code, Hunyuan Hy3, Seed-OSS-36B, Qwen3.5-9B/4B, Qwen3.6-35B-A3B; corrected multimodality of Qwen3.5/3.6/3.8 and Kimi K2.6; license corrections (MiniMax M2.5, Moonshot >$20M term, Qwen3.8-2.4T terms); new Appendices C-G (voice/omni, document AI, free tiers, GPU buying, changelog); new arXiv references; registry 88 → 101 models; features-at-a-glance panel; browse-by-category index (14 categories); Summer 2026 release wave by category; per-category breakdown added to data/models.json |
 | 2026-09-09 | 2026.09 (initial) | Full ModelAtlas rebuilt: sections 1-24 + appendices A-B, llms.txt, structured registry, weekly refresh workflow |
 
 ## Colophon

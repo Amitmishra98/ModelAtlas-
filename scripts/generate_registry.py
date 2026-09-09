@@ -461,9 +461,12 @@ def csv_safe(v):
 def main():
     path = os.path.join(R, "data", "models.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
+    from collections import Counter
+    cats = dict(sorted(Counter(m.get("category", "") for m in M).items()))
     with open(path, "w", encoding="utf-8") as f:
         json.dump({"generated": "2026-09-09", "source": "ModelAtlas README.md §2/§4",
-                   "count": len(M), "models": M}, f, indent=2, ensure_ascii=False)
+                   "count": len(M), "category_count": len(cats), "categories": cats,
+                   "models": M}, f, indent=2, ensure_ascii=False)
     cols = ["id","name","org","category","params_total","params_active","architecture",
             "context","modality","license","release","ollama","hf","github","api","notes","commercial"]
     out = [",".join(cols)]
